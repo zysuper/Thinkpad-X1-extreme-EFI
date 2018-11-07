@@ -1,5 +1,6 @@
 ## The part that can work
 * Sound card (AppleALC)
+* intel cable Gigabit LAN (mini RJ45)
 * intel integrated graphics
 * nvidia graphics card (screened off, power saving, although the dual graphics card is no problem, but mojave no nvidia graphics driver)
 * Battery level display (DSDT patch, you can use RehabMan/thinkpad x230i patch directly)

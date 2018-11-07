@@ -1,5 +1,6 @@
 ## 可以工作的部分
 * 声卡（AppleALC）
+* intel有线千兆网卡（mini RJ45）
 * intel集成显卡
 * nvidia显卡（屏蔽掉，省电,虽然双显卡也没有问题，但是mojave没有nvidia显卡驱动）
 * 电池电量显示（DSDT补丁，可直接使用RehabMan/thinkpad x230i patch）
