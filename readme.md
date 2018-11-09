@@ -8,6 +8,7 @@
 * usb port configuration
 * Touchpad and touch screen (multi-finger touch is not yet completed)
 * Keyboard function keys, volume and screen brightness (DSDT EC _Q14, _Q15 patch)
+* card reader
 
 ## Installation Precautions
 * Installation must be started using config-install.plist, the installation uses fake-id 0x12345678
