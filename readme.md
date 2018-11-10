@@ -14,6 +14,6 @@
 * Installation must be started using config-install.plist, the installation uses fake-id 0x12345678
 
 ## Waiting for the perfect part
-* Touchpad multi-touch driver
-* Touch screen multi-touch driver
-* The first time the machine opens, there is a problem that cannot be started.
+* ~~Touchpad multi-touch driver~~
+* ~~Touch screen multi-touch driver~~
+* ~~The first time the machine opens, there is a problem that cannot be started.~~
