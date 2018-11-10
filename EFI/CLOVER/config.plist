@@ -183,7 +183,7 @@
 					<key>Comment</key>
 					<string>change _DSM to XDSM</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>X0RTTQ==</data>
 					<key>Replace</key>
@@ -299,7 +299,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>igfxcflbklt=none -lilubetaall igfxrst=1 -cdfon</string>
+		<string>igfxcflbklt=none -lilubetaall igfxrst=1 -cdfon </string>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>HibernationFixup</key>
@@ -311,7 +311,7 @@
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
-		<integer>4</integer>
+		<integer>1</integer>
 	</dict>
 	<key>Devices</key>
 	<dict>
