@@ -378,9 +378,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
     Name (SS1, 0x00)
     Name (SS2, 0x00)
     Name (SS3, One)
-    One
+    Name (SSX, One)
     Name (SS4, One)
-    One
+    Name (SSY, One)
     OperationRegion (GNVS, SystemMemory, 0x4FBE9000, 0x0802)
     Field (GNVS, AnyAcc, Lock, Preserve)
     {
@@ -18270,7 +18270,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                     ,   3, 
                 HPLO,   1, 
                 Offset (0x36), 
-                HWAC,   16, 
+                AC10,8,AC11,8, 
                 HB0S,   7, 
                 HB0A,   1, 
                 HB1S,   7, 
@@ -18320,7 +18320,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 Offset (0x4C), 
                 HTMH,   8, 
                 HTML,   8, 
-                HWAK,   16, 
+                AK00,8,AK01,8, 
                 HMPR,   8, 
                     ,   7, 
                 HMDN,   1, 
@@ -19595,12 +19595,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
             Field (ECOR, ByteAcc, NoLock, Preserve)
             {
                 Offset (0xA0), 
-                SBRC,   16, 
-                SBFC,   16, 
+                RC00,8,RC01,8, 
+                FC00,8,FC01,8, 
                 SBAE,   16, 
                 SBRS,   16, 
-                SBAC,   16, 
-                SBVO,   16, 
+                AC00,8,AC01,8, 
+                BV00,8,BV01,8, 
                 SBAF,   16, 
                 SBBS,   16
             }
@@ -19608,38 +19608,38 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
             Field (ECOR, ByteAcc, NoLock, Preserve)
             {
                 Offset (0xA0), 
-                SBBM,   16, 
+                SB00,8,SB01,8, 
                 SBMD,   16, 
-                SBCC,   16
+                CC00,8,CC01,8,
             }
 
             Field (ECOR, ByteAcc, NoLock, Preserve)
             {
                 Offset (0xA0), 
-                SBDC,   16, 
-                SBDV,   16, 
+                DC00,8,DC01,8, 
+                DV00,8,DV01,8, 
                 SBOM,   16, 
                 SBSI,   16, 
                 SBDT,   16, 
-                SBSN,   16
+                SN00,8,SN01,8
             }
 
             Field (ECOR, ByteAcc, NoLock, Preserve)
             {
                 Offset (0xA0), 
-                SBCH,   32
+                CH00,8,CH01,8,CH02,8,CH03,8
             }
 
             Field (ECOR, ByteAcc, NoLock, Preserve)
             {
                 Offset (0xA0), 
-                SBMN,   128
+                BMNX,128,//SBMN,128
             }
 
             Field (ECOR, ByteAcc, NoLock, Preserve)
             {
                 Offset (0xA0), 
-                SBDN,   128
+                BDNX,128,//SBDN,128
             }
 
             Mutex (BATM, 0x00)
@@ -19649,28 +19649,28 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 If (Arg2)
                 {
                     Or (Arg0, 0x01, HIID)
-                    Store (SBBM, Local7)
+                    Store (B1B2(SB00,SB01), Local7)
                     ShiftRight (Local7, 0x0F, Local7)
                     XOr (Local7, 0x01, Index (Arg1, 0x00))
                     Store (Arg0, HIID)
                     If (Local7)
                     {
-                        Multiply (SBFC, 0x0A, Local1)
+                        Multiply (B1B2(FC00,FC01), 0x0A, Local1)
                     }
                     Else
                     {
-                        Store (SBFC, Local1)
+                        Store (B1B2(FC00,FC01), Local1)
                     }
 
                     Store (Local1, Index (Arg1, 0x02))
                     Or (Arg0, 0x02, HIID)
                     If (Local7)
                     {
-                        Multiply (SBDC, 0x0A, Local0)
+                        Multiply (B1B2(DC00,DC01), 0x0A, Local0)
                     }
                     Else
                     {
-                        Store (SBDC, Local0)
+                        Store (B1B2(DC00,DC01), Local0)
                     }
 
                     Store (Local0, Index (Arg1, 0x01))
@@ -19679,17 +19679,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                     {
                         Store (0xC8, Index (Arg1, 0x06))
                     }
-                    ElseIf (SBDV)
+                    ElseIf (B1B2(DV00,DV01))
                     {
-                        Divide (0x00030D40, SBDV, Local2, Index (Arg1, 0x06))
+                        Divide (0x00030D40, B1B2(DV00,DV01), Local2, Index (Arg1, 0x06))
                     }
                     Else
                     {
                         Store (0x00, Index (Arg1, 0x06))
                     }
 
-                    Store (SBDV, Index (Arg1, 0x04))
-                    Store (SBSN, Local0)
+                    Store (B1B2(DV00,DV01), Index (Arg1, 0x04))
+                    Store (B1B2(SN00,SN01), Local0)
                     Name (SERN, Buffer (0x06)
                     {
                         "     "
@@ -19704,16 +19704,16 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
 
                     Store (SERN, Index (Arg1, 0x0A))
                     Or (Arg0, 0x06, HIID)
-                    Store (SBDN, Index (Arg1, 0x09))
+                    Store (RECB(0xA0,128), Index (Arg1, 0x09))
                     Or (Arg0, 0x04, HIID)
                     Name (BTYP, Buffer (0x05)
                     {
                          0x00, 0x00, 0x00, 0x00, 0x00                   
                     })
-                    Store (SBCH, BTYP)
+                    Store (B1B4(CH00,CH01,CH02,CH03), BTYP)
                     Store (BTYP, Index (Arg1, 0x0B))
                     Or (Arg0, 0x05, HIID)
-                    Store (SBMN, Index (Arg1, 0x0C))
+                    Store (RECB(0xA0,128), Index (Arg1, 0x0C))
                 }
                 Else
                 {
@@ -19733,30 +19733,30 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 If (Arg2)
                 {
                     Or (Arg0, 0x01, HIID)
-                    Store (SBCC, Local7)
+                    Store (B1B2(CC00,CC01), Local7)
                     Store (Local7, Index (Arg1, 0x08))
-                    Store (SBBM, Local7)
+                    Store (B1B2(SB00,SB01), Local7)
                     ShiftRight (Local7, 0x0F, Local7)
                     XOr (Local7, 0x01, Index (Arg1, 0x01))
                     Store (Arg0, HIID)
                     If (Local7)
                     {
-                        Multiply (SBFC, 0x0A, Local1)
+                        Multiply (B1B2(FC00,FC01), 0x0A, Local1)
                     }
                     Else
                     {
-                        Store (SBFC, Local1)
+                        Store (B1B2(FC00,FC01), Local1)
                     }
 
                     Store (Local1, Index (Arg1, 0x03))
                     Or (Arg0, 0x02, HIID)
                     If (Local7)
                     {
-                        Multiply (SBDC, 0x0A, Local0)
+                        Multiply (B1B2(DC00,DC01), 0x0A, Local0)
                     }
                     Else
                     {
-                        Store (SBDC, Local0)
+                        Store (B1B2(DC00,DC01), Local0)
                     }
 
                     Store (Local0, Index (Arg1, 0x02))
@@ -19765,17 +19765,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                     {
                         Store (0xC8, Index (Arg1, 0x07))
                     }
-                    ElseIf (SBDV)
+                    ElseIf (B1B2(DV00,DV01))
                     {
-                        Divide (0x00030D40, SBDV, Local2, Index (Arg1, 0x07))
+                        Divide (0x00030D40, B1B2(DV00,DV01), Local2, Index (Arg1, 0x07))
                     }
                     Else
                     {
                         Store (0x00, Index (Arg1, 0x07))
                     }
 
-                    Store (SBDV, Index (Arg1, 0x05))
-                    Store (SBSN, Local0)
+                    Store (B1B2(DV00,DV01), Index (Arg1, 0x05))
+                    Store (B1B2(SN00,SN01), Local0)
                     Name (SERN, Buffer (0x06)
                     {
                         "     "
@@ -19790,16 +19790,16 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
 
                     Store (SERN, Index (Arg1, 0x11))
                     Or (Arg0, 0x06, HIID)
-                    Store (SBDN, Index (Arg1, 0x10))
+                    Store (RECB(0xA0,128), Index (Arg1, 0x10))
                     Or (Arg0, 0x04, HIID)
                     Name (BTYP, Buffer (0x05)
                     {
                          0x00, 0x00, 0x00, 0x00, 0x00                   
                     })
-                    Store (SBCH, BTYP)
+                    Store (B1B4(CH00,CH01,CH02,CH03), BTYP)
                     Store (BTYP, Index (Arg1, 0x12))
                     Or (Arg0, 0x05, HIID)
-                    Store (SBMN, Index (Arg1, 0x13))
+                    Store (RECB(0xA0,128), Index (Arg1, 0x13))
                 }
                 Else
                 {
@@ -19853,17 +19853,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 Else
                 {
                     Store (Arg0, HIID)
-                    Store (SBVO, Local3)
+                    Store (B1B2(BV00,BV01), Local3)
                     If (Arg2)
                     {
-                        Multiply (SBRC, 0x0A, Local2)
+                        Multiply (B1B2(RC00,RC01), 0x0A, Local2)
                     }
                     Else
                     {
-                        Store (SBRC, Local2)
+                        Store (B1B2(RC00,RC01), Local2)
                     }
 
-                    Store (SBAC, Local1)
+                    Store (B1B2(AC00,AC01), Local1)
                     If (LGreaterEqual (Local1, 0x8000))
                     {
                         If (And (Local0, 0x01))
@@ -19958,7 +19958,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 Store (Arg1, Local0)
                 Acquire (BATM, 0xFFFF)
                 Store (Arg0, HIID)
-                Store (SBRC, Local1)
+                Store (B1B2(RC00,RC01), Local1)
                 Release (BATM)
                 If (LEqual (Arg0, 0x00))
                 {
@@ -20292,6 +20292,29 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 Else
                 {
                 }
+            }
+            Method (RE1B, 1, NotSerialized)
+            // Arg0 - offset in bytes from zero-based EC
+            {
+                OperationRegion(ECOR, EmbeddedControl, Arg0, 1)
+                Field(ECOR, ByteAcc, NoLock, Preserve) { BYTE, 8 }
+                Return(BYTE)
+            }
+            Method (RECB, 2, Serialized)
+            // Arg0 - offset in bytes from zero-based EC
+            // Arg1 - size of buffer in bits
+            {
+                ShiftRight(Arg1, 3, Arg1)
+                Name(TEMP, Buffer(Arg1) { })
+                Add(Arg0, Arg1, Arg1)
+                Store(0, Local0)
+                While (LLess(Arg0, Arg1))
+                {
+                    Store(RE1B(Arg0), Index(TEMP, Local0))
+                    Increment(Arg0)
+                    Increment(Local0)
+                }
+                Return(TEMP)
             }
         }
 
@@ -22508,7 +22531,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
 
         If (LLess (Arg0, 0x04))
         {
-            If (LOr (And (\RRBF, 0x02), And (\_SB.PCI0.LPCB.EC.HWAC, 0x02)))
+            If (LOr (And (\RRBF, 0x02), And (B1B2(\_SB.PCI0.LPCB.EC.AC10,\_SB.PCI0.LPCB.EC.AC11), 0x02)))
             {
                 ShiftLeft (Arg0, 0x08, Local0)
                 Store (Or (0x2013, Local0), Local0)
@@ -24280,7 +24303,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
     {
         Method (_L17, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
         {
-            Store (\_SB.PCI0.LPCB.EC.HWAC, Local0)
+            Store (B1B2(\_SB.PCI0.LPCB.EC.AC10,\_SB.PCI0.LPCB.EC.AC11), Local0)
             Store (Local0, \RRBF)
             Sleep (0x0A)
             If (And (Local0, 0x02)) {}
@@ -38569,6 +38592,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 {
                     Notify (\_SB.PCI0.PEG0.PEGP.LCD0, 0x86)
                 }
+                Notify (KBD, 0x0406)
             }
 
             Method (_Q15, 0, NotSerialized)  // _Qxx: EC Query
@@ -38586,7 +38610,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 {
                     Notify (\_SB.PCI0.PEG0.PEGP.LCD0, 0x87)
                 }
-
+                Notify (KBD, 0x0405)
                 Return (Zero)
             }
 
@@ -40825,6 +40849,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 \_SB.PCI0.LPCB.EC.LED (0x0A, 0xC0)
             }
         }
+    }
+    Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }
+    Method (B1B4, 4, NotSerialized)
+    {
+        Store(Arg3, Local0)
+        Or(Arg2, ShiftLeft(Local0, 8), Local0)
+        Or(Arg1, ShiftLeft(Local0, 8), Local0)
+        Or(Arg0, ShiftLeft(Local0, 8), Local0)
+        Return(Local0)
     }
 }
 
