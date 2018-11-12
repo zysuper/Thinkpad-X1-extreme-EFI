@@ -17,3 +17,4 @@
 * ~~Touchpad multi-touch driver~~
 * ~~Touch screen multi-touch driver~~
 * ~~The first time the machine opens, there is a problem that cannot be started.~~
+* HDMI video output (HDMI is directly connected to the discrete graphics channel, you need to wait for nvidia mojave driver)
