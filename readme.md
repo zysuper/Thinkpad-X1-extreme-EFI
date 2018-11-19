@@ -18,3 +18,8 @@
 * ~~Touch screen multi-touch driver~~
 * ~~The first time the machine opens, there is a problem that cannot be started.~~
 * HDMI video output (HDMI is directly connected to the discrete graphics channel, you need to wait for nvidia mojave driver)
+
+## review
+![系统信息](https://github.com/zysuper/Thinkpad-X1-extreme-EFI/raw/master/screenshot/WX20181112-135012%402x.png)
+![声卡](https://github.com/zysuper/Thinkpad-X1-extreme-EFI/raw/master/screenshot/WX20181112-135132%402x.png)
+![hidpi](https://github.com/zysuper/Thinkpad-X1-extreme-EFI/raw/master/screenshot/WX20181112-135157%402x.png)
