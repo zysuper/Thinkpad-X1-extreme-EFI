@@ -19,7 +19,17 @@
 * ~~The first time the machine opens, there is a problem that cannot be started.~~
 * HDMI video output (HDMI is directly connected to the discrete graphics channel, you need to wait for nvidia mojave driver)
 
+## ACPI file description
+* DSDT.aml has patched the battery and modified the brightness adjustment problem. (Look at my submission record for details of the changes, don't use them directly, because my second hard drive and added memory will be different from yours).
+* SSDT_NVMe-Pcc.aml This is used to shield the PM981 on the main hard drive location. If your PM981 is not the primary hard drive location, please do not use it.
+* SSDT_DDGPU.aml Blocks discrete graphics and saves power.
+* SSDT-GPRW.aml SSDT-PTSWAK.aml Hibernation issue fix.
+* SSDT-USBX.aml USB power injection.
+* SSDT-PNLF.aml Screen brightness adjustment fix hot patch. (need to cooperate with AppleBacklightFixup.kext)
+* SSDT-XOSI.aml Common operating system discriminating hot patches.
+* SSDT-RMCF.aml Several other aml dependent configurations use aml.
+
 ## review
-![系统信息](https://github.com/zysuper/Thinkpad-X1-extreme-EFI/raw/master/screenshot/WX20181112-135012%402x.png)
-![声卡](https://github.com/zysuper/Thinkpad-X1-extreme-EFI/raw/master/screenshot/WX20181112-135132%402x.png)
+![system infomation](https://github.com/zysuper/Thinkpad-X1-extreme-EFI/raw/master/screenshot/WX20181112-135012%402x.png)
+![sound card](https://github.com/zysuper/Thinkpad-X1-extreme-EFI/raw/master/screenshot/WX20181112-135132%402x.png)
 ![hidpi](https://github.com/zysuper/Thinkpad-X1-extreme-EFI/raw/master/screenshot/WX20181112-135157%402x.png)
