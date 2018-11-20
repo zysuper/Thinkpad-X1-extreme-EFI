@@ -31,7 +31,7 @@
 
 ## kext Description
 * WhateverGreen.kext The version of WhateverGreen.kext @headkaze fork. The black screen repair feature is turned off. (clover boot flag)
-* AppleALC.kext based on @danliansky's ALC285 layout id 11 extracts pinData and injects layout id 7. (In rare cases, you may have to restart twice to get AppleALC to work)
+* AppleALC.kext based on @danliansky's ALC285 layout id 11 then extracts pinData from linux and add injects layout id 7 config. (In rare cases, you may have to restart twice to get AppleALC to work)
 
 ## review
 ![system infomation](https://github.com/zysuper/Thinkpad-X1-extreme-EFI/raw/master/screenshot/WX20181112-135012%402x.png)
