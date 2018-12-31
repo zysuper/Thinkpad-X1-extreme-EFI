@@ -5,13 +5,13 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of DSDT.aml, Sat Nov 24 09:32:08 2018
+ * Disassembly of DSDT.aml, Mon Dec 31 10:03:41 2018
  *
  * Original Table Header:
  *     Signature        "DSDT"
  *     Length           0x000360F6 (221430)
  *     Revision         0x02
- *     Checksum         0x3A
+ *     Checksum         0x3E
  *     OEM ID           "LENOVO"
  *     OEM Table ID     "CFL     "
  *     OEM Revision     0x20170001 (538378241)
@@ -44464,8 +44464,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
             If (\VIGD) {}
             Else
             {
-                \_SB.PCI0.PEG0.MASP (0x03)
-                \_SB.PCI0.PEG0.PEGP.MASP (0x03)
+                \_SB.PCI0.PEG0.MASP (0x01)
+                \_SB.PCI0.PEG0.PEGP.MASP (0x01)
             }
 
             Sleep (0x01F4)
