@@ -11,7 +11,7 @@
 * card reader
 
 ## Installation Precautions
-* Installation must be started using config-install.plist, the installation uses fake-id 0x12345678
+* This EFI supports installation when using it, without the need for a separate config.plist.
 
 ## Waiting for the perfect part
 * ~~Touchpad multi-touch driver~~
