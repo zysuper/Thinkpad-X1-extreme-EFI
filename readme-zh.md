@@ -33,6 +33,9 @@
 * WhateverGreen.kext @headkaze fork的版本。关闭了黑屏修复功能。（clover boot flag）
 * AppleALC.kext 基于@danliansky的ALC285 layout id 11然后从linux下提取pinData注入了layout id 7。（极少情况下，你可能要重启两次让AppleALC工作）
 
+## ALCPlugFix
+* 你可能需要安装ALCPlugFix/alc_fix下的守候进程（我修改过的版本，适用于X1E系列），解决耳机插孔切换有爆音的问题。
+
 ## 效果预览
 ![system infomation](https://github.com/zysuper/Thinkpad-X1-extreme-EFI/raw/master/screenshot/WX20181112-135012%402x.png)
 ![sound card](https://github.com/zysuper/Thinkpad-X1-extreme-EFI/raw/master/screenshot/WX20181112-135132%402x.png)
