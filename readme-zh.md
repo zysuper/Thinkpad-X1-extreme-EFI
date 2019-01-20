@@ -28,6 +28,7 @@
 * SSDT-PNLF.aml 屏幕亮度调节修复热补丁。(需要配合AppleBacklightFixup.kext)
 * SSDT-XOSI.aml 常用的操作系统判别热补丁。
 * SSDT-RMCF.aml 其他几个aml依赖的配置用aml。
+* SSDT-Thinkpad_Clickpad @andyy24提供的修复小红点漂移问题。
 
 ## kext说明
 * WhateverGreen.kext @headkaze fork的版本。关闭了黑屏修复功能。（clover boot flag）

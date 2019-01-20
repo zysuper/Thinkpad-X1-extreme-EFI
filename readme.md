@@ -28,6 +28,7 @@
 * SSDT-PNLF.aml Screen brightness adjustment fix hot patch. (need to cooperate with AppleBacklightFixup.kext)
 * SSDT-XOSI.aml Common operating system discriminating hot patches.
 * SSDT-RMCF.aml Several other aml dependent configurations use aml.
+* SSDT-Thinkpad_Clickpad @andyy24 provides fixes for small red dot drift problems.
 
 ## kext Description
 * WhateverGreen.kext The version of WhateverGreen.kext @headkaze fork. The black screen repair feature is turned off. (clover boot flag)
