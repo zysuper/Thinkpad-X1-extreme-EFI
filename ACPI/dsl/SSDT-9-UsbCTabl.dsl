@@ -5,7 +5,7 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-9-UsbCTabl.aml, Fri Feb  8 16:57:30 2019
+ * Disassembly of SSDT-9-UsbCTabl.aml, Fri Feb  8 17:12:08 2019
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -89,7 +89,7 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "UsbCTabl", 0x00001000)
                 Memory32Fixed (ReadWrite,
                     0x00000000,         // Address Base
                     0x00001000,         // Address Length
-                    _Y66)
+                    _Y65)
             })
             Method (RUCC, 2, Serialized)
             {
@@ -400,7 +400,7 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "UsbCTabl", 0x00001000)
 
             Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
             {
-                CreateDWordField (CRS, \_SB.UBTC._Y66._BAS, CBAS)  // _BAS: Base Address
+                CreateDWordField (CRS, \_SB.UBTC._Y65._BAS, CBAS)  // _BAS: Base Address
                 Store (UBCB, CBAS)
                 Return (CRS)
             }
