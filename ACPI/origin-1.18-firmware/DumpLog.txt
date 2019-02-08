@@ -1,0 +1,205 @@
+27:262  19:020  Found BIOS RSDP at F0140
+27:262  0:000  Printing ACPI tables from RSDP F0140 ...
+27:262  0:000   F0140: 'RSD PTR ', Rev: 2 (Acpi 2.0 or newer), Len: 36
+27:262  0:000    (Xsdt: 4FD0C188, Rsdt: 4FD0C0C4)
+27:262  0:000    4FD0C188: 'XSDT', 'TP-N2E', Rev: 1, Len: 292
+27:262  0:000    4FD0C0C4: 'RSDT', 'TP-N2E', Rev: 1, Len: 164
+27:262  0:000    Tables in Xsdt: 32
+27:262  0:000    0. 40C27000: 'FACP', 'TP-N2E', Rev: 6, Len: 276
+27:262  0:000        (Dsdt: 40BEC000, Facs: 4FBD8000, XDsdt: 40BEC000, XFacs: 0)
+27:262  0:000        40BEC000: 'DSDT', 'CFL', Rev: 2, Len: 221430
+27:267  0:004        4FBD8000: 'FACS', Ver: 2, Len: 64
+27:267  0:000    1. 40CD9000: 'SSDT', 'CpuSsdt', Rev: 2, Len: 6101
+27:267  0:000    2. 40CD8000: 'SSDT', 'CtdpB', Rev: 2, Len: 1389
+27:267  0:000    3. 40C9D000: 'SSDT', 'DptfTabl', Rev: 2, Len: 20768
+27:267  0:000    4. 40C2F000: 'SSDT', 'SaSsdt', Rev: 2, Len: 12607
+27:267  0:000    5. 40C2C000: 'SSDT', 'PegSsdt', Rev: 2, Len: 10853
+27:267  0:000    6. 40C2B000: 'SSDT', 'Tpm2Tabl', Rev: 2, Len: 993
+27:267  0:000    7. 40C2A000: 'TPM2', 'TP-N2E', Rev: 4, Len: 52
+27:267  0:000    8. 4FBF1000: 'UEFI', 'TP-N2E', Rev: 1, Len: 66
+27:267  0:000    9. 40C28000: 'SSDT', 'PerfTune', Rev: 2, Len: 1320
+27:267  0:000    10. 40C26000: 'HPET', 'TP-N2E', Rev: 1, Len: 56
+27:267  0:000    11. 40C25000: 'APIC', 'TP-N2E', Rev: 3, Len: 300
+27:267  0:000    12. 40C24000: 'MCFG', 'TP-N2E', Rev: 1, Len: 60
+27:267  0:000    13. 40C23000: 'ECDT', 'TP-N2E', Rev: 1, Len: 83
+27:267  0:000    14. 40BEA000: 'SSDT', 'CflH_Tbt', Rev: 2, Len: 4601
+27:267  0:000    15. 40BE8000: 'SSDT', 'ProjSsdt', Rev: 2, Len: 7273
+27:267  0:000    16. 40BE7000: 'BOOT', 'TP-N2E', Rev: 1, Len: 40
+27:267  0:000    17. 40BE6000: 'SLIC', 'TP-N2E', Rev: 1, Len: 374
+27:267  0:000    18. 40BE5000: 'SSDT', 'UsbCTabl', Rev: 2, Len: 4002
+27:267  0:000    19. 40BE4000: 'LPIT', 'TP-N2E', Rev: 1, Len: 92
+27:267  0:000    20. 40BE3000: 'WSMT', 'TP-N2E', Rev: 1, Len: 40
+27:267  0:000    21. 40BE1000: 'SSDT', 'TbtTypeC', Rev: 2, Len: 5559
+27:267  0:000    22. 40BE0000: 'DBGP', 'TP-N2E', Rev: 1, Len: 52
+27:267  0:000    23. 40BDF000: 'DBG2', 'TP-N2E', Rev: 0, Len: 84
+27:267  0:000    24. 40BDE000: 'MSDM', 'TP-N2E', Rev: 3, Len: 85
+27:267  0:000    25. 40BC9000: 'BATB', 'TP-N2E', Rev: 2, Len: 74
+27:267  0:000    26. 3EDC6000: 'NHLT', 'TP-N2E', Rev: 0, Len: 45
+27:267  0:000    27. 3EDC5000: 'SSDT', 'SgPeg', Rev: 2, Len: 174
+27:267  0:000    28. 3EDC4000: 'DMAR', 'TP-N2E', Rev: 1, Len: 168
+27:267  0:000    29. 3EDC2000: 'FPDT', 'TP-N2E', Rev: 1, Len: 68
+27:267  0:000    30. 4FBD5000: 'UEFI', 'TP-N2E', Rev: 1, Len: 298
+27:267  0:000    31. 3EDC0000: 'SSDT', 'NvOptTbl', Rev: 1, Len: 7173
+27:267  0:000    Tables in Rsdt: 32
+27:267  0:000    0. 40C27000: 'FACP', 'TP-N2E', Rev: 6, Len: 276
+27:267  0:000        (Dsdt: 40BEC000, Facs: 4FBD8000, XDsdt: 40BEC000, XFacs: 0)
+27:267  0:000        40BEC000: 'DSDT', 'CFL', Rev: 2, Len: 221430
+27:272  0:004        4FBD8000: 'FACS', Ver: 2, Len: 64
+27:272  0:000    1. 40CD9000: 'SSDT', 'CpuSsdt', Rev: 2, Len: 6101
+27:272  0:000    2. 40CD8000: 'SSDT', 'CtdpB', Rev: 2, Len: 1389
+27:272  0:000    3. 40C9D000: 'SSDT', 'DptfTabl', Rev: 2, Len: 20768
+27:272  0:000    4. 40C2F000: 'SSDT', 'SaSsdt', Rev: 2, Len: 12607
+27:272  0:000    5. 40C2C000: 'SSDT', 'PegSsdt', Rev: 2, Len: 10853
+27:272  0:000    6. 40C2B000: 'SSDT', 'Tpm2Tabl', Rev: 2, Len: 993
+27:272  0:000    7. 40C2A000: 'TPM2', 'TP-N2E', Rev: 4, Len: 52
+27:272  0:000    8. 4FBF1000: 'UEFI', 'TP-N2E', Rev: 1, Len: 66
+27:272  0:000    9. 40C28000: 'SSDT', 'PerfTune', Rev: 2, Len: 1320
+27:272  0:000    10. 40C26000: 'HPET', 'TP-N2E', Rev: 1, Len: 56
+27:272  0:000    11. 40C25000: 'APIC', 'TP-N2E', Rev: 3, Len: 300
+27:272  0:000    12. 40C24000: 'MCFG', 'TP-N2E', Rev: 1, Len: 60
+27:272  0:000    13. 40C23000: 'ECDT', 'TP-N2E', Rev: 1, Len: 83
+27:272  0:000    14. 40BEA000: 'SSDT', 'CflH_Tbt', Rev: 2, Len: 4601
+27:272  0:000    15. 40BE8000: 'SSDT', 'ProjSsdt', Rev: 2, Len: 7273
+27:272  0:000    16. 40BE7000: 'BOOT', 'TP-N2E', Rev: 1, Len: 40
+27:272  0:000    17. 40BE6000: 'SLIC', 'TP-N2E', Rev: 1, Len: 374
+27:272  0:000    18. 40BE5000: 'SSDT', 'UsbCTabl', Rev: 2, Len: 4002
+27:272  0:000    19. 40BE4000: 'LPIT', 'TP-N2E', Rev: 1, Len: 92
+27:272  0:000    20. 40BE3000: 'WSMT', 'TP-N2E', Rev: 1, Len: 40
+27:272  0:000    21. 40BE1000: 'SSDT', 'TbtTypeC', Rev: 2, Len: 5559
+27:272  0:000    22. 40BE0000: 'DBGP', 'TP-N2E', Rev: 1, Len: 52
+27:272  0:000    23. 40BDF000: 'DBG2', 'TP-N2E', Rev: 0, Len: 84
+27:272  0:000    24. 40BDE000: 'MSDM', 'TP-N2E', Rev: 3, Len: 85
+27:272  0:000    25. 40BC9000: 'BATB', 'TP-N2E', Rev: 2, Len: 74
+27:272  0:000    26. 3EDC6000: 'NHLT', 'TP-N2E', Rev: 0, Len: 45
+27:272  0:000    27. 3EDC5000: 'SSDT', 'SgPeg', Rev: 2, Len: 174
+27:272  0:000    28. 3EDC4000: 'DMAR', 'TP-N2E', Rev: 1, Len: 168
+27:272  0:000    29. 3EDC2000: 'FPDT', 'TP-N2E', Rev: 1, Len: 68
+27:272  0:000    30. 4FBD5000: 'UEFI', 'TP-N2E', Rev: 1, Len: 298
+27:272  0:000    31. 3EDC0000: 'SSDT', 'NvOptTbl', Rev: 1, Len: 7173
+27:272  0:000  Found UEFI Acpi 2.0 RSDP at 4FD0E014
+27:272  0:000  Saving ACPI tables from RSDP 4FD0E014 to EFI\CLOVER\ACPI\origin ...
+27:272  0:000   4FD0E014: 'RSD PTR ', Rev: 2 (Acpi 2.0 or newer), Len: 36 -> RSDP.aml
+27:329  0:056    (Xsdt: 4FD0C188, Rsdt: 4FD0C0C4)
+27:329  0:000    4FD0C188: 'XSDT', 'TP-N2E', Rev: 1, Len: 292 -> XSDT.aml
+27:384  0:054    4FD0C0C4: 'RSDT', 'TP-N2E', Rev: 1, Len: 164 -> RSDT.aml
+27:440  0:056    Tables in Xsdt: 32
+27:440  0:000    0. 40C27000: 'FACP', 'TP-N2E', Rev: 6, Len: 276 -> FACP.aml
+27:494  0:053        (Dsdt: 40BEC000, Facs: 4FBD8000, XDsdt: 40BEC000, XFacs: 0)
+27:494  0:000        40BEC000: 'DSDT', 'CFL', Rev: 2, Len: 221430 -> DSDT.aml
+27:559  0:065        4FBD8000: 'FACS', Ver: 2, Len: 64 -> FACS.aml
+27:614  0:055    1. 40CD9000: 'SSDT', 'CpuSsdt', Rev: 2, Len: 6101 -> SSDT-0-CpuSsdt.aml (Found hidden SSDT 7 pcs)
+27:673  0:058        * 4EE5D098: 'SSDT', 'Cpu0Ist', Rev: 2, Len: 1593  53 53 44 54 39 06 00 00 02 55 50 6D 52 65 66 00 Internal length = 1593 -> SSDT-x0_0-Cpu0Ist.aml
+27:729  0:055        * 4EE4E018: 'SSDT', 'ApIst', Rev: 2, Len: 3825  53 53 44 54 F1 0E 00 00 02 ED 50 6D 52 65 66 00 Internal length = 3825 -> SSDT-x0_1-ApIst.aml
+27:794  0:065        * 4EE4D018: 'SSDT', 'Cpu0Cst', Rev: 2, Len: 1078  53 53 44 54 36 04 00 00 02 20 50 6D 52 65 66 00 Internal length = 1078 -> SSDT-x0_2-Cpu0Cst.aml
+27:848  0:054        * 4EE4FA98: 'SSDT', 'ApCst', Rev: 2, Len: 778  53 53 44 54 0A 03 00 00 02 E9 50 6D 52 65 66 00 Internal length = 778 -> SSDT-x0_3-ApCst.aml
+27:905  0:056        * 4EE5D718: 'SSDT', 'Cpu0Hwp', Rev: 2, Len: 283  53 53 44 54 1B 01 00 00 02 61 50 6D 52 65 66 00 Internal length = 283 -> SSDT-x0_4-Cpu0Hwp.aml
+27:962  0:056        * 4EE5DB18: 'SSDT', 'ApHwp', Rev: 2, Len: 791  53 53 44 54 17 03 00 00 02 E3 50 6D 52 65 66 00 Internal length = 791 -> SSDT-x0_5-ApHwp.aml
+28:018  0:056        * 4EE4F018: 'SSDT', 'HwpLvt', Rev: 2, Len: 1828  53 53 44 54 24 07 00 00 02 CA 50 6D 52 65 66 00 Internal length = 1828 -> SSDT-x0_6-HwpLvt.aml
+28:084  0:066  
+28:084  0:000    2. 40CD8000: 'SSDT', 'CtdpB', Rev: 2, Len: 1389 -> SSDT-1-CtdpB.aml
+28:142  0:058    3. 40C9D000: 'SSDT', 'DptfTabl', Rev: 2, Len: 20768 -> SSDT-2-DptfTabl.aml
+28:203  0:060    4. 40C2F000: 'SSDT', 'SaSsdt', Rev: 2, Len: 12607 -> SSDT-3-SaSsdt.aml
+28:262  0:058    5. 40C2C000: 'SSDT', 'PegSsdt', Rev: 2, Len: 10853 -> SSDT-4-PegSsdt.aml
+28:319  0:057    6. 40C2B000: 'SSDT', 'Tpm2Tabl', Rev: 2, Len: 993 -> SSDT-5-Tpm2Tabl.aml
+28:388  0:068    7. 40C2A000: 'TPM2', 'TP-N2E', Rev: 4, Len: 52 -> TPM2.aml
+28:443  0:055    8. 4FBF1000: 'UEFI', 'TP-N2E', Rev: 1, Len: 66 -> UEFI.aml
+28:498  0:055    9. 40C28000: 'SSDT', 'PerfTune', Rev: 2, Len: 1320 -> SSDT-6-PerfTune.aml
+28:553  0:054    10. 40C26000: 'HPET', 'TP-N2E', Rev: 1, Len: 56 -> HPET.aml
+28:607  0:054    11. 40C25000: 'APIC', 'TP-N2E', Rev: 3, Len: 300 -> APIC.aml
+28:663  0:055    12. 40C24000: 'MCFG', 'TP-N2E', Rev: 1, Len: 60 -> MCFG.aml
+28:719  0:055    13. 40C23000: 'ECDT', 'TP-N2E', Rev: 1, Len: 83 -> ECDT.aml
+28:774  0:055    14. 40BEA000: 'SSDT', 'CflH_Tbt', Rev: 2, Len: 4601 -> SSDT-7-CflH_Tbt.aml
+28:830  0:055    15. 40BE8000: 'SSDT', 'ProjSsdt', Rev: 2, Len: 7273 -> SSDT-8-ProjSsdt.aml
+28:889  0:058    16. 40BE7000: 'BOOT', 'TP-N2E', Rev: 1, Len: 40 -> BOOT.aml
+28:954  0:064    17. 40BE6000: 'SLIC', 'TP-N2E', Rev: 1, Len: 374 -> SLIC.aml
+29:010  0:055    18. 40BE5000: 'SSDT', 'UsbCTabl', Rev: 2, Len: 4002 -> SSDT-9-UsbCTabl.aml
+29:066  0:056    19. 40BE4000: 'LPIT', 'TP-N2E', Rev: 1, Len: 92 -> LPIT.aml
+29:122  0:055    20. 40BE3000: 'WSMT', 'TP-N2E', Rev: 1, Len: 40 -> WSMT.aml
+29:177  0:055    21. 40BE1000: 'SSDT', 'TbtTypeC', Rev: 2, Len: 5559 -> SSDT-10-TbtTypeC.aml
+29:233  0:055    22. 40BE0000: 'DBGP', 'TP-N2E', Rev: 1, Len: 52 -> DBGP.aml
+29:288  0:055    23. 40BDF000: 'DBG2', 'TP-N2E', Rev: 0, Len: 84 -> DBG2.aml
+29:345  0:056    24. 40BDE000: 'MSDM', 'TP-N2E', Rev: 3, Len: 85 -> MSDM.aml
+29:404  0:058    25. 40BC9000: 'BATB', 'TP-N2E', Rev: 2, Len: 74 -> BATB.aml
+29:459  0:054    26. 3EDC6000: 'NHLT', 'TP-N2E', Rev: 0, Len: 45 -> NHLT.aml
+29:513  0:054    27. 3EDC5000: 'SSDT', 'SgPeg', Rev: 2, Len: 174 -> SSDT-11-SgPeg.aml
+29:577  0:063    28. 3EDC4000: 'DMAR', 'TP-N2E', Rev: 1, Len: 168 -> DMAR.aml
+29:632  0:054    29. 3EDC2000: 'FPDT', 'TP-N2E', Rev: 1, Len: 68 -> FPDT.aml
+29:686  0:054    30. 4FBD5000: 'UEFI', 'TP-N2E', Rev: 1, Len: 298 -> UEFI.aml
+29:744  0:057    31. 3EDC0000: 'SSDT', 'NvOptTbl', Rev: 1, Len: 7173 -> SSDT-12-NvOptTbl.aml
+29:798  0:054    Tables in Rsdt: 32
+29:798  0:000    0. 40C27000: 'FACP', 'TP-N2E', Rev: 6, Len: 276
+29:798  0:000        (Dsdt: 40BEC000, Facs: 4FBD8000, XDsdt: 40BEC000, XFacs: 0)
+29:798  0:000        40BEC000: 'DSDT', 'CFL', Rev: 2, Len: 221430
+29:803  0:004        4FBD8000: 'FACS', Ver: 2, Len: 64
+29:803  0:000    1. 40CD9000: 'SSDT', 'CpuSsdt', Rev: 2, Len: 6101
+29:803  0:000    2. 40CD8000: 'SSDT', 'CtdpB', Rev: 2, Len: 1389
+29:803  0:000    3. 40C9D000: 'SSDT', 'DptfTabl', Rev: 2, Len: 20768
+29:803  0:000    4. 40C2F000: 'SSDT', 'SaSsdt', Rev: 2, Len: 12607
+29:803  0:000    5. 40C2C000: 'SSDT', 'PegSsdt', Rev: 2, Len: 10853
+29:803  0:000    6. 40C2B000: 'SSDT', 'Tpm2Tabl', Rev: 2, Len: 993
+29:803  0:000    7. 40C2A000: 'TPM2', 'TP-N2E', Rev: 4, Len: 52
+29:803  0:000    8. 4FBF1000: 'UEFI', 'TP-N2E', Rev: 1, Len: 66
+29:803  0:000    9. 40C28000: 'SSDT', 'PerfTune', Rev: 2, Len: 1320
+29:803  0:000    10. 40C26000: 'HPET', 'TP-N2E', Rev: 1, Len: 56
+29:803  0:000    11. 40C25000: 'APIC', 'TP-N2E', Rev: 3, Len: 300
+29:803  0:000    12. 40C24000: 'MCFG', 'TP-N2E', Rev: 1, Len: 60
+29:803  0:000    13. 40C23000: 'ECDT', 'TP-N2E', Rev: 1, Len: 83
+29:803  0:000    14. 40BEA000: 'SSDT', 'CflH_Tbt', Rev: 2, Len: 4601
+29:803  0:000    15. 40BE8000: 'SSDT', 'ProjSsdt', Rev: 2, Len: 7273
+29:803  0:000    16. 40BE7000: 'BOOT', 'TP-N2E', Rev: 1, Len: 40
+29:803  0:000    17. 40BE6000: 'SLIC', 'TP-N2E', Rev: 1, Len: 374
+29:803  0:000    18. 40BE5000: 'SSDT', 'UsbCTabl', Rev: 2, Len: 4002
+29:803  0:000    19. 40BE4000: 'LPIT', 'TP-N2E', Rev: 1, Len: 92
+29:803  0:000    20. 40BE3000: 'WSMT', 'TP-N2E', Rev: 1, Len: 40
+29:803  0:000    21. 40BE1000: 'SSDT', 'TbtTypeC', Rev: 2, Len: 5559
+29:803  0:000    22. 40BE0000: 'DBGP', 'TP-N2E', Rev: 1, Len: 52
+29:803  0:000    23. 40BDF000: 'DBG2', 'TP-N2E', Rev: 0, Len: 84
+29:803  0:000    24. 40BDE000: 'MSDM', 'TP-N2E', Rev: 3, Len: 85
+29:803  0:000    25. 40BC9000: 'BATB', 'TP-N2E', Rev: 2, Len: 74
+29:803  0:000    26. 3EDC6000: 'NHLT', 'TP-N2E', Rev: 0, Len: 45
+29:803  0:000    27. 3EDC5000: 'SSDT', 'SgPeg', Rev: 2, Len: 174
+29:803  0:000    28. 3EDC4000: 'DMAR', 'TP-N2E', Rev: 1, Len: 168
+29:803  0:000    29. 3EDC2000: 'FPDT', 'TP-N2E', Rev: 1, Len: 68
+29:803  0:000    30. 4FBD5000: 'UEFI', 'TP-N2E', Rev: 1, Len: 298
+29:803  0:000    31. 3EDC0000: 'SSDT', 'NvOptTbl', Rev: 1, Len: 7173
+29:803  0:000  Found UEFI Acpi 1.0 RSDP at 4FD0E000
+29:803  0:000  Printing ACPI tables from RSDP 4FD0E000 ...
+29:803  0:000   4FD0E000: 'RSD PTR ', Rev: 0 (Acpi 1.0), Len: 20
+29:803  0:000    (Rsdt: 4FD0C000)
+29:803  0:000    4FD0C000: 'RSDT', 'TP-N2E', Rev: 1, Len: 164
+29:803  0:000    Tables in Rsdt: 32
+29:803  0:000    0. 40C27000: 'FACP', 'TP-N2E', Rev: 6, Len: 276
+29:803  0:000        (Dsdt: 40BEC000, Facs: 4FBD8000, XDsdt: 40BEC000, XFacs: 0)
+29:803  0:000        40BEC000: 'DSDT', 'CFL', Rev: 2, Len: 221430
+29:808  0:004        4FBD8000: 'FACS', Ver: 2, Len: 64
+29:808  0:000    1. 40CD9000: 'SSDT', 'CpuSsdt', Rev: 2, Len: 6101
+29:808  0:000    2. 40CD8000: 'SSDT', 'CtdpB', Rev: 2, Len: 1389
+29:808  0:000    3. 40C9D000: 'SSDT', 'DptfTabl', Rev: 2, Len: 20768
+29:808  0:000    4. 40C2F000: 'SSDT', 'SaSsdt', Rev: 2, Len: 12607
+29:808  0:000    5. 40C2C000: 'SSDT', 'PegSsdt', Rev: 2, Len: 10853
+29:808  0:000    6. 40C2B000: 'SSDT', 'Tpm2Tabl', Rev: 2, Len: 993
+29:808  0:000    7. 40C2A000: 'TPM2', 'TP-N2E', Rev: 4, Len: 52
+29:808  0:000    8. 4FBF1000: 'UEFI', 'TP-N2E', Rev: 1, Len: 66
+29:808  0:000    9. 40C28000: 'SSDT', 'PerfTune', Rev: 2, Len: 1320
+29:808  0:000    10. 40C26000: 'HPET', 'TP-N2E', Rev: 1, Len: 56
+29:808  0:000    11. 40C25000: 'APIC', 'TP-N2E', Rev: 3, Len: 300
+29:808  0:000    12. 40C24000: 'MCFG', 'TP-N2E', Rev: 1, Len: 60
+29:808  0:000    13. 40C23000: 'ECDT', 'TP-N2E', Rev: 1, Len: 83
+29:808  0:000    14. 40BEA000: 'SSDT', 'CflH_Tbt', Rev: 2, Len: 4601
+29:808  0:000    15. 40BE8000: 'SSDT', 'ProjSsdt', Rev: 2, Len: 7273
+29:808  0:000    16. 40BE7000: 'BOOT', 'TP-N2E', Rev: 1, Len: 40
+29:808  0:000    17. 40BE6000: 'SLIC', 'TP-N2E', Rev: 1, Len: 374
+29:808  0:000    18. 40BE5000: 'SSDT', 'UsbCTabl', Rev: 2, Len: 4002
+29:808  0:000    19. 40BE4000: 'LPIT', 'TP-N2E', Rev: 1, Len: 92
+29:808  0:000    20. 40BE3000: 'WSMT', 'TP-N2E', Rev: 1, Len: 40
+29:808  0:000    21. 40BE1000: 'SSDT', 'TbtTypeC', Rev: 2, Len: 5559
+29:808  0:000    22. 40BE0000: 'DBGP', 'TP-N2E', Rev: 1, Len: 52
+29:808  0:000    23. 40BDF000: 'DBG2', 'TP-N2E', Rev: 0, Len: 84
+29:808  0:000    24. 40BDE000: 'MSDM', 'TP-N2E', Rev: 3, Len: 85
+29:808  0:000    25. 40BC9000: 'BATB', 'TP-N2E', Rev: 2, Len: 74
+29:808  0:000    26. 3EDC6000: 'NHLT', 'TP-N2E', Rev: 0, Len: 45
+29:808  0:000    27. 3EDC5000: 'SSDT', 'SgPeg', Rev: 2, Len: 174
+29:808  0:000    28. 3EDC4000: 'DMAR', 'TP-N2E', Rev: 1, Len: 168
+29:808  0:000    29. 3EDC2000: 'FPDT', 'TP-N2E', Rev: 1, Len: 68
+29:808  0:000    30. 4FBD5000: 'UEFI', 'TP-N2E', Rev: 1, Len: 298
+29:808  0:000    31. 3EDC0000: 'SSDT', 'NvOptTbl', Rev: 1, Len: 7173
