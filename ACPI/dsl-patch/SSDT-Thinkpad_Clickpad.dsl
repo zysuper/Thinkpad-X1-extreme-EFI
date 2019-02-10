@@ -2,8 +2,8 @@
 DefinitionBlock ("", "SSDT", 2, "hack", "ps2", 0)
 {
     // Change _SB.PCI0.LPC.KBD if your PS2 keyboard is at a different ACPI path
-    External(_SB.PCI0.LPC.KBD, DeviceObj)
-    Scope(_SB.PCI0.LPC.KBD)
+    External(_SB_.PCI0.LPCB.KBD_, DeviceObj)
+    Scope(_SB_.PCI0.LPCB.KBD_)
     {
         // Select specific configuration in VoodooPS2Trackpad.kext
         Method(_DSM, 4)
@@ -32,7 +32,7 @@ DefinitionBlock ("", "SSDT", 2, "hack", "ps2", 0)
                 "PalmNoAction When Typing", ">y",
                 "ScrollResolution", 800,
                 "SmoothInput", ">y",
-                "UnsmootInput", ">y",
+                "UnsmoothInput", ">y",
                 "Thinkpad", ">y",
                 "EdgeBottom", 0,
                 "FingerZ", 30,
