@@ -9,13 +9,13 @@
 * 触控板和触控屏幕（多指触控尚未完成）
 * 键盘功能键，音量与屏幕亮度（DSDT EC _Q14,_Q15 patch)
 * 读卡器
-* 无线网卡与蓝牙 （需要转接板与 smart card 连线， 来自 @Errrneist 的解决方案）
+* 无线网卡与蓝牙 （需要转接板与 smart card 连线， 来自 [@Errrneist](https://github.com/Errrneist/Hackintosh-Thinkpad-X1-Extreme) 的解决方案）
 
 ## 安装注意事项
 * 本EFI支持安装的时候使用，无需其他单独的config.plist。
 
 ## HDMI
-* HDMI视频输出（需要使用支援 displaylink 芯片的 usb 3.0 外置显卡，解决方案来自 @Errrneist）
+* HDMI视频输出（需要使用支援 displaylink 芯片的 usb 3.0 外置显卡，解决方案来自 [@Errrneist](https://github.com/Errrneist/Hackintosh-Thinkpad-X1-Extreme)）
 
 ## 无线网卡改造方案
 [板卡设计图](https://github.com/zysuper/Thinkpad-X1-extreme-EFI/blob/master/doc/Wi-Fi%20bluethooth-zh.md)

@@ -9,12 +9,13 @@
 * Touchpad and touch screen (multi-finger touch is not yet completed)
 * Keyboard function keys, volume and screen brightness (DSDT EC _Q14, _Q15 patch)
 * card reader
+* Wireless network card and Bluetooth (requires adapter board to connect with smart card, solution from [@Errrneist] (https://github.com/Errrneist/Hackintosh-Thinkpad-X1-Extreme))
 
 ## Installation Precautions
 * This EFI supports installation when using it, without the need for a separate config.plist.
 
 ## HDMI 
-* HDMI video output (requires usb 3.0 external graphics card supporting displaylink chip, the solution comes from @Errrneist)
+* HDMI video output (requires usb 3.0 external graphics card supporting displaylink chip, the solution comes from [@Errrneist](https://github.com/Errrneist/Hackintosh-Thinkpad-X1-Extreme))
 
 ## Wireless network card Custom
 [board design detail](https://github.com/zysuper/Thinkpad-X1-extreme-EFI/blob/master/doc/Wi-Fi%20bluethooth.md)
