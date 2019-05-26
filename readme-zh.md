@@ -9,15 +9,16 @@
 * 触控板和触控屏幕（多指触控尚未完成）
 * 键盘功能键，音量与屏幕亮度（DSDT EC _Q14,_Q15 patch)
 * 读卡器
+* 无线网卡与蓝牙 （需要转接板与 smart card 连线， 来自 @Errrneist 的解决方案）
 
 ## 安装注意事项
 * 本EFI支持安装的时候使用，无需其他单独的config.plist。
 
-## 等待完善的部分
-* ~~触控板多点触控驱动~~
-* ~~触控屏幕多点触控驱动~~
-* ~~首次机器开机会出现无法启动的问题~~
-* HDMI视频输出（HDMI是直接和独立显卡通道连接的，需要等nvidia mojave驱动了）
+## HDMI
+* HDMI视频输出（需要使用支援 displaylink 芯片的 usb 3.0 外置显卡，解决方案来自 @Errrneist）
+
+## 无线网卡改造方案
+[板卡设计](https://github.com/zysuper/Thinkpad-X1-extreme-EFI/doc)
 
 ## ACPI文件说明
 * DSDT.aml 打了电池补丁和修改亮度调节问题。（看我的提交记录了解变更详情，不要直接使用，因为我的第二硬盘和加的内存会和你的不同）。

@@ -13,11 +13,11 @@
 ## Installation Precautions
 * This EFI supports installation when using it, without the need for a separate config.plist.
 
-## Waiting for the perfect part
-* ~~Touchpad multi-touch driver~~
-* ~~Touch screen multi-touch driver~~
-* ~~The first time the machine opens, there is a problem that cannot be started.~~
-* HDMI video output (HDMI is directly connected to the discrete graphics channel, you need to wait for nvidia mojave driver)
+## HDMI 
+* HDMI video output (requires usb 3.0 external graphics card supporting displaylink chip, the solution comes from @Errrneist)
+
+## Wireless network card Custom
+[board design](https://github.com/zysuper/Thinkpad-X1-extreme-EFI/doc)
 
 ## ACPI file description
 * DSDT.aml has patched the battery and modified the brightness adjustment problem. (Look at my submission record for details of the changes, don't use them directly, because my second hard drive and added memory will be different from yours).
