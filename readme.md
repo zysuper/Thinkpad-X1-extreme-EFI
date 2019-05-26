@@ -17,7 +17,7 @@
 * HDMI video output (requires usb 3.0 external graphics card supporting displaylink chip, the solution comes from @Errrneist)
 
 ## Wireless network card Custom
-[board design](https://github.com/zysuper/Thinkpad-X1-extreme-EFI/doc)
+[board design detail](https://github.com/zysuper/Thinkpad-X1-extreme-EFI/blob/master/doc/Wi-Fi%20bluethooth.md)
 
 ## ACPI file description
 * DSDT.aml has patched the battery and modified the brightness adjustment problem. (Look at my submission record for details of the changes, don't use them directly, because my second hard drive and added memory will be different from yours).

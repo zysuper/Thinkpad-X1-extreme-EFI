@@ -18,7 +18,7 @@
 * HDMI视频输出（需要使用支援 displaylink 芯片的 usb 3.0 外置显卡，解决方案来自 @Errrneist）
 
 ## 无线网卡改造方案
-[板卡设计](https://github.com/zysuper/Thinkpad-X1-extreme-EFI/doc)
+[板卡设计图](https://github.com/zysuper/Thinkpad-X1-extreme-EFI/blob/master/doc/Wi-Fi%20bluethooth-zh.md)
 
 ## ACPI文件说明
 * DSDT.aml 打了电池补丁和修改亮度调节问题。（看我的提交记录了解变更详情，不要直接使用，因为我的第二硬盘和加的内存会和你的不同）。
