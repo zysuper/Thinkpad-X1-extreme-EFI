@@ -1,3 +1,7 @@
+## update log
+
+- [19-5-29] add noTouchId.kext. MacOS is expecting Touch ID to be available, causing lag on password prompts, this kext can fix this.
+
 ## The part that can work
 
 - Sound card (AppleALC)
