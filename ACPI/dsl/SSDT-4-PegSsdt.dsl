@@ -5,13 +5,13 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-4-PegSsdt.aml, Fri Feb  8 17:12:08 2019
+ * Disassembly of SSDT-4-PegSsdt.aml, Sun Jul  7 08:55:24 2019
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x00002A65 (10853)
+ *     Length           0x00002A82 (10882)
  *     Revision         0x02
- *     Checksum         0xFD
+ *     Checksum         0xB5
  *     OEM ID           "LENOVO"
  *     OEM Table ID     "PegSsdt"
  *     OEM Revision     0x00001000 (4096)
@@ -75,6 +75,7 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "PegSsdt", 0x00001000)
     External (_SB_.PCI0.PEG2.PPBA, MethodObj)    // 1 Arguments (from opcode)
     External (_SB_.SGOV, MethodObj)    // 2 Arguments (from opcode)
     External (_SB_.SHPO, MethodObj)    // 2 Arguments (from opcode)
+    External (_SB_.SKOF, UnknownObj)    // (from opcode)
     External (AR02, UnknownObj)    // (from opcode)
     External (AR0A, UnknownObj)    // (from opcode)
     External (AR0B, UnknownObj)    // (from opcode)
@@ -1633,6 +1634,11 @@ DefinitionBlock ("", "SSDT", 2, "LENOVO", "PegSsdt", 0x00001000)
                 Zero
             })
             If (LEqual (CCHK (PIOF, Zero), Zero))
+            {
+                Return (Zero)
+            }
+
+            If (LEqual (\_SB.SKOF, One))
             {
                 Return (Zero)
             }

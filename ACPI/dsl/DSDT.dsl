@@ -5,13 +5,13 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of DSDT.aml, Fri Feb  8 17:12:07 2019
+ * Disassembly of DSDT.aml, Sun Jul  7 08:55:23 2019
  *
  * Original Table Header:
  *     Signature        "DSDT"
- *     Length           0x000360F6 (221430)
+ *     Length           0x00035ED3 (220883)
  *     Revision         0x02
- *     Checksum         0x3E
+ *     Checksum         0x3D
  *     OEM ID           "LENOVO"
  *     OEM Table ID     "CFL     "
  *     OEM Revision     0x20170001 (538378241)
@@ -94,7 +94,6 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
     External (_SB_.PCI0.I2C1.INC1, MethodObj)    // 0 Arguments (from opcode)
     External (_SB_.PCI0.IPU0, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.LPCB.H_EC.XDAT, MethodObj)    // 0 Arguments (from opcode)
-    External (_SB_.PCI0.MLTR, UnknownObj)    // (from opcode)
     External (_SB_.PCI0.PAUD.PUAM, MethodObj)    // 0 Arguments (from opcode)
     External (_SB_.PCI0.PEG0, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.PEG0.MASP, MethodObj)    // 1 Arguments (from opcode)
@@ -297,6 +296,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
     External (_SB_.PR00.LPSS, PkgObj)    // (from opcode)
     External (_SB_.PR00.TPSS, PkgObj)    // (from opcode)
     External (_SB_.SGOV, MethodObj)    // 2 Arguments (from opcode)
+    External (_SB_.SKOF, UnknownObj)    // (from opcode)
     External (_SB_.SPC0, MethodObj)    // 2 Arguments (from opcode)
     External (_SB_.TBFP, MethodObj)    // 2 Arguments (from opcode)
     External (_SB_.TPM_.PTS_, MethodObj)    // 1 Arguments (from opcode)
@@ -386,9 +386,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
     Name (SS1, 0x00)
     Name (SS2, 0x00)
     Name (SS3, One)
-    One
+    Name (SSX, One)
     Name (SS4, One)
-    One
+    Name (SSY, One)
     OperationRegion (GNVS, SystemMemory, 0x4FBE9000, 0x0802)
     Field (GNVS, AnyAcc, Lock, Preserve)
     {
@@ -3678,6 +3678,11 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 }
             }
         }
+    }
+
+    Scope (\_SB)
+    {
+        Name (SKOF, Zero)
     }
 
     If (LEqual (ECR1, 0x01))
@@ -18278,7 +18283,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                     ,   3, 
                 HPLO,   1, 
                 Offset (0x36), 
-                HWAC,   16, 
+                AC10,8,AC11,8, 
                 HB0S,   7, 
                 HB0A,   1, 
                 HB1S,   7, 
@@ -18328,7 +18333,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 Offset (0x4C), 
                 HTMH,   8, 
                 HTML,   8, 
-                HWAK,   16, 
+                AK00,8,AK01,8, 
                 HMPR,   8, 
                     ,   7, 
                 HMDN,   1, 
@@ -19603,12 +19608,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
             Field (ECOR, ByteAcc, NoLock, Preserve)
             {
                 Offset (0xA0), 
-                SBRC,   16, 
-                SBFC,   16, 
+                RC00,8,RC01,8, 
+                FC00,8,FC01,8, 
                 SBAE,   16, 
                 SBRS,   16, 
-                SBAC,   16, 
-                SBVO,   16, 
+                AC00,8,AC01,8, 
+                BV00,8,BV01,8, 
                 SBAF,   16, 
                 SBBS,   16
             }
@@ -19616,38 +19621,38 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
             Field (ECOR, ByteAcc, NoLock, Preserve)
             {
                 Offset (0xA0), 
-                SBBM,   16, 
+                SB00,8,SB01,8, 
                 SBMD,   16, 
-                SBCC,   16
+                CC00,8,CC01,8,
             }
 
             Field (ECOR, ByteAcc, NoLock, Preserve)
             {
                 Offset (0xA0), 
-                SBDC,   16, 
-                SBDV,   16, 
+                DC00,8,DC01,8, 
+                DV00,8,DV01,8, 
                 SBOM,   16, 
                 SBSI,   16, 
                 SBDT,   16, 
-                SBSN,   16
+                SN00,8,SN01,8
             }
 
             Field (ECOR, ByteAcc, NoLock, Preserve)
             {
                 Offset (0xA0), 
-                SBCH,   32
+                CH00,8,CH01,8,CH02,8,CH03,8
             }
 
             Field (ECOR, ByteAcc, NoLock, Preserve)
             {
                 Offset (0xA0), 
-                SBMN,   128
+                BMNX,128,//SBMN,128
             }
 
             Field (ECOR, ByteAcc, NoLock, Preserve)
             {
                 Offset (0xA0), 
-                SBDN,   128
+                BDNX,128,//SBDN,128
             }
 
             Mutex (BATM, 0x00)
@@ -19657,28 +19662,28 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 If (Arg2)
                 {
                     Or (Arg0, 0x01, HIID)
-                    Store (SBBM, Local7)
+                    Store (B1B2(SB00,SB01), Local7)
                     ShiftRight (Local7, 0x0F, Local7)
                     XOr (Local7, 0x01, Index (Arg1, 0x00))
                     Store (Arg0, HIID)
                     If (Local7)
                     {
-                        Multiply (SBFC, 0x0A, Local1)
+                        Multiply (B1B2(FC00,FC01), 0x0A, Local1)
                     }
                     Else
                     {
-                        Store (SBFC, Local1)
+                        Store (B1B2(FC00,FC01), Local1)
                     }
 
                     Store (Local1, Index (Arg1, 0x02))
                     Or (Arg0, 0x02, HIID)
                     If (Local7)
                     {
-                        Multiply (SBDC, 0x0A, Local0)
+                        Multiply (B1B2(DC00,DC01), 0x0A, Local0)
                     }
                     Else
                     {
-                        Store (SBDC, Local0)
+                        Store (B1B2(DC00,DC01), Local0)
                     }
 
                     Store (Local0, Index (Arg1, 0x01))
@@ -19687,17 +19692,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                     {
                         Store (0xC8, Index (Arg1, 0x06))
                     }
-                    ElseIf (SBDV)
+                    ElseIf (B1B2(DV00,DV01))
                     {
-                        Divide (0x00030D40, SBDV, Local2, Index (Arg1, 0x06))
+                        Divide (0x00030D40, B1B2(DV00,DV01), Local2, Index (Arg1, 0x06))
                     }
                     Else
                     {
                         Store (0x00, Index (Arg1, 0x06))
                     }
 
-                    Store (SBDV, Index (Arg1, 0x04))
-                    Store (SBSN, Local0)
+                    Store (B1B2(DV00,DV01), Index (Arg1, 0x04))
+                    Store (B1B2(SN00,SN01), Local0)
                     Name (SERN, Buffer (0x06)
                     {
                         "     "
@@ -19712,16 +19717,16 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
 
                     Store (SERN, Index (Arg1, 0x0A))
                     Or (Arg0, 0x06, HIID)
-                    Store (SBDN, Index (Arg1, 0x09))
+                    Store (RECB(0xA0,128), Index (Arg1, 0x09))
                     Or (Arg0, 0x04, HIID)
                     Name (BTYP, Buffer (0x05)
                     {
                          0x00, 0x00, 0x00, 0x00, 0x00                   
                     })
-                    Store (SBCH, BTYP)
+                    Store (B1B4(CH00,CH01,CH02,CH03), BTYP)
                     Store (BTYP, Index (Arg1, 0x0B))
                     Or (Arg0, 0x05, HIID)
-                    Store (SBMN, Index (Arg1, 0x0C))
+                    Store (RECB(0xA0,128), Index (Arg1, 0x0C))
                 }
                 Else
                 {
@@ -19741,30 +19746,30 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 If (Arg2)
                 {
                     Or (Arg0, 0x01, HIID)
-                    Store (SBCC, Local7)
+                    Store (B1B2(CC00,CC01), Local7)
                     Store (Local7, Index (Arg1, 0x08))
-                    Store (SBBM, Local7)
+                    Store (B1B2(SB00,SB01), Local7)
                     ShiftRight (Local7, 0x0F, Local7)
                     XOr (Local7, 0x01, Index (Arg1, 0x01))
                     Store (Arg0, HIID)
                     If (Local7)
                     {
-                        Multiply (SBFC, 0x0A, Local1)
+                        Multiply (B1B2(FC00,FC01), 0x0A, Local1)
                     }
                     Else
                     {
-                        Store (SBFC, Local1)
+                        Store (B1B2(FC00,FC01), Local1)
                     }
 
                     Store (Local1, Index (Arg1, 0x03))
                     Or (Arg0, 0x02, HIID)
                     If (Local7)
                     {
-                        Multiply (SBDC, 0x0A, Local0)
+                        Multiply (B1B2(DC00,DC01), 0x0A, Local0)
                     }
                     Else
                     {
-                        Store (SBDC, Local0)
+                        Store (B1B2(DC00,DC01), Local0)
                     }
 
                     Store (Local0, Index (Arg1, 0x02))
@@ -19773,17 +19778,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                     {
                         Store (0xC8, Index (Arg1, 0x07))
                     }
-                    ElseIf (SBDV)
+                    ElseIf (B1B2(DV00,DV01))
                     {
-                        Divide (0x00030D40, SBDV, Local2, Index (Arg1, 0x07))
+                        Divide (0x00030D40, B1B2(DV00,DV01), Local2, Index (Arg1, 0x07))
                     }
                     Else
                     {
                         Store (0x00, Index (Arg1, 0x07))
                     }
 
-                    Store (SBDV, Index (Arg1, 0x05))
-                    Store (SBSN, Local0)
+                    Store (B1B2(DV00,DV01), Index (Arg1, 0x05))
+                    Store (B1B2(SN00,SN01), Local0)
                     Name (SERN, Buffer (0x06)
                     {
                         "     "
@@ -19798,16 +19803,16 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
 
                     Store (SERN, Index (Arg1, 0x11))
                     Or (Arg0, 0x06, HIID)
-                    Store (SBDN, Index (Arg1, 0x10))
+                    Store (RECB(0xA0,128), Index (Arg1, 0x10))
                     Or (Arg0, 0x04, HIID)
                     Name (BTYP, Buffer (0x05)
                     {
                          0x00, 0x00, 0x00, 0x00, 0x00                   
                     })
-                    Store (SBCH, BTYP)
+                    Store (B1B4(CH00,CH01,CH02,CH03), BTYP)
                     Store (BTYP, Index (Arg1, 0x12))
                     Or (Arg0, 0x05, HIID)
-                    Store (SBMN, Index (Arg1, 0x13))
+                    Store (RECB(0xA0,128), Index (Arg1, 0x13))
                 }
                 Else
                 {
@@ -19861,17 +19866,17 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 Else
                 {
                     Store (Arg0, HIID)
-                    Store (SBVO, Local3)
+                    Store (B1B2(BV00,BV01), Local3)
                     If (Arg2)
                     {
-                        Multiply (SBRC, 0x0A, Local2)
+                        Multiply (B1B2(RC00,RC01), 0x0A, Local2)
                     }
                     Else
                     {
-                        Store (SBRC, Local2)
+                        Store (B1B2(RC00,RC01), Local2)
                     }
 
-                    Store (SBAC, Local1)
+                    Store (B1B2(AC00,AC01), Local1)
                     If (LGreaterEqual (Local1, 0x8000))
                     {
                         If (And (Local0, 0x01))
@@ -19966,7 +19971,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 Store (Arg1, Local0)
                 Acquire (BATM, 0xFFFF)
                 Store (Arg0, HIID)
-                Store (SBRC, Local1)
+                Store (B1B2(RC00,RC01), Local1)
                 Release (BATM)
                 If (LEqual (Arg0, 0x00))
                 {
@@ -20300,6 +20305,29 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 Else
                 {
                 }
+            }
+            Method (RE1B, 1, NotSerialized)
+            // Arg0 - offset in bytes from zero-based EC
+            {
+                OperationRegion(ECOR, EmbeddedControl, Arg0, 1)
+                Field(ECOR, ByteAcc, NoLock, Preserve) { BYTE, 8 }
+                Return(BYTE)
+            }
+            Method (RECB, 2, Serialized)
+            // Arg0 - offset in bytes from zero-based EC
+            // Arg1 - size of buffer in bits
+            {
+                ShiftRight(Arg1, 3, Arg1)
+                Name(TEMP, Buffer(Arg1) { })
+                Add(Arg0, Arg1, Arg1)
+                Store(0, Local0)
+                While (LLess(Arg0, Arg1))
+                {
+                    Store(RE1B(Arg0), Index(TEMP, Local0))
+                    Increment(Arg0)
+                    Increment(Local0)
+                }
+                Return(TEMP)
             }
         }
 
@@ -22516,7 +22544,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
 
         If (LLess (Arg0, 0x04))
         {
-            If (LOr (And (\RRBF, 0x02), And (\_SB.PCI0.LPCB.EC.HWAC, 0x02)))
+            If (LOr (And (\RRBF, 0x02), And (B1B2(\_SB.PCI0.LPCB.EC.AC10,\_SB.PCI0.LPCB.EC.AC11), 0x02)))
             {
                 ShiftLeft (Arg0, 0x08, Local0)
                 Store (Or (0x2013, Local0), Local0)
@@ -22592,23 +22620,13 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
             }
         }
 
+        If (LAnd (LEqual (Arg0, 0x04), LEqual (IGDS, Zero)))
+        {
+            Store (One, \_SB.SKOF)
+        }
+
         If (LOr (LEqual (Arg0, 0x03), LEqual (Arg0, 0x04)))
         {
-            If (CondRefOf (\_SB.PCI0.PEG0.PEGP.HDAS))
-            {
-                Store (\_SB.PCI0.PEG0.PEGP.HDAS, \_SB.PCI0.MLTR)
-            }
-
-            If (LEqual (OSYS, 0x07DD))
-            {
-                Store (One, \_SB.PCI0.MLTR)
-            }
-
-            If (\_OSI ("Linux-Lenovo-NV-HDMI-Audio"))
-            {
-                Store (One, \_SB.PCI0.MLTR)
-            }
-
             Store (0x00, \_SB.PCI0.LPCB.EC.HKEY.ANGN)
         }
 
@@ -23286,11 +23304,6 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 {
                     Store (0x01, \LNUX)
                     Store (0x03E8, OSYS)
-                }
-
-                If (\_OSI ("Linux-Lenovo-NV-HDMI-Audio"))
-                {
-                    Store (One, \_SB.PCI0.MLTR)
                 }
             }
             ElseIf (LEqual (\SCMP (\_OS, "Microsoft Windows NT"), Zero))
@@ -24288,7 +24301,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
     {
         Method (_L17, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
         {
-            Store (\_SB.PCI0.LPCB.EC.HWAC, Local0)
+            Store (B1B2(\_SB.PCI0.LPCB.EC.AC10,\_SB.PCI0.LPCB.EC.AC11), Local0)
             Store (Local0, \RRBF)
             Sleep (0x0A)
             If (And (Local0, 0x02)) {}
@@ -41232,7 +41245,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 "Access Denied", 
                 "System Busy"
             })
-            Name (ITEM, Package (0x6C)
+            Name (ITEM, Package (0x6F)
             {
                 Package (0x02)
                 {
@@ -41879,10 +41892,28 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 Package (0x02)
                 {
                     0x00, 
+                    "Audio"
+                }, 
+
+                Package (0x02)
+                {
+                    0x00, 
                     "TouchPanelAccess"
+                }, 
+
+                Package (0x02)
+                {
+                    0x1B, 
+                    "MaxPasswordAttempts"
+                }, 
+
+                Package (0x02)
+                {
+                    0x1C, 
+                    "PasswordChangeTime"
                 }
             })
-            Name (VSEL, Package (0x1B)
+            Name (VSEL, Package (0x1D)
             {
                 Package (0x02)
                 {
@@ -41916,12 +41947,10 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                     "Synchronized"
                 }, 
 
-                Package (0x04)
+                Package (0x02)
                 {
                     "LCD", 
-                    "USBTypeC", 
-                    "DisplayPort", 
-                    "HDMI"
+                    "ExternalDisplay"
                 }, 
 
                 Package (0x03)
@@ -42077,6 +42106,20 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                     "Disable", 
                     "Enable", 
                     "Pre-BootACL"
+                }, 
+
+                Package (0x04)
+                {
+                    "Unlimited", 
+                    "1", 
+                    "3", 
+                    "100"
+                }, 
+
+                Package (0x02)
+                {
+                    "Immediately", 
+                    "AfterReboot"
                 }
             })
             Name (VLST, Package (0x11)
@@ -43281,7 +43324,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 Release (\_SB.WMI1.MWMI)
             }
 
-            Name (ITEM, Package (0x08)
+            Name (ITEM, Package (0x09)
             {
                 Package (0x02)
                 {
@@ -43329,6 +43372,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 {
                     0x00, 
                     "ConfirmTpmFwUpdate"
+                }, 
+
+                Package (0x02)
+                {
+                    0x00, 
+                    "CustomPasswordMode"
                 }
             })
             Name (VSEL, Package (0x04)
@@ -44579,7 +44628,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
 
         Method (_Q7F, 0, NotSerialized)  // _Qxx: EC Query
         {
-            Fatal (0x01, 0x80010000, 0x00017A66)
+            Fatal (0x01, 0x80010000, 0x00017A8F)
         }
 
         Method (_Q46, 0, NotSerialized)  // _Qxx: EC Query
@@ -44802,7 +44851,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 0x5A, 
                 0x64
             })
-            Name (BRTB, Package (0x07)
+            Name (BRTB, Package (0x05)
             {
                 Package (0x16)
                 {
@@ -44910,7 +44959,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
 
                 Package (0x16)
                 {
-                    0x1E, 
+                    0x24, 
                     0x03, 
                     0x03, 
                     0x06, 
@@ -44928,65 +44977,13 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                     0xC1, 
                     0xDC, 
                     0xFF, 
-                    0x0587, 
-                    0x0587, 
-                    0x03, 
-                    0x03
-                }, 
-
-                Package (0x16)
-                {
-                    0x1E, 
-                    0x03, 
-                    0x03, 
-                    0x06, 
-                    0x0B, 
-                    0x0F, 
-                    0x17, 
-                    0x21, 
-                    0x2E, 
-                    0x3A, 
-                    0x43, 
-                    0x50, 
-                    0x5F, 
-                    0x78, 
-                    0x95, 
-                    0xC1, 
-                    0xDC, 
-                    0xFF, 
-                    0x0587, 
-                    0x0587, 
-                    0x03, 
-                    0x03
-                }, 
-
-                Package (0x16)
-                {
-                    0x28, 
-                    0x03, 
-                    0x03, 
-                    0x06, 
-                    0x0B, 
-                    0x0F, 
-                    0x17, 
-                    0x21, 
-                    0x2E, 
-                    0x3A, 
-                    0x43, 
-                    0x50, 
-                    0x5F, 
-                    0x78, 
-                    0x95, 
-                    0xC1, 
-                    0xDC, 
-                    0xFF, 
-                    0x0587, 
-                    0x0587, 
+                    0x03DE, 
+                    0x03DE, 
                     0x03, 
                     0x03
                 }
             })
-            Name (BRTD, Package (0x07)
+            Name (BRTD, Package (0x05)
             {
                 Package (0x65)
                 {
@@ -45406,216 +45403,6 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                     0xEB, 
                     0xF5, 
                     0xFF
-                }, 
-
-                Package (0x65)
-                {
-                    0x03, 
-                    0x04, 
-                    0x05, 
-                    0x06, 
-                    0x07, 
-                    0x08, 
-                    0x09, 
-                    0x0A, 
-                    0x0B, 
-                    0x0C, 
-                    0x0D, 
-                    0x0E, 
-                    0x0F, 
-                    0x10, 
-                    0x11, 
-                    0x12, 
-                    0x13, 
-                    0x14, 
-                    0x15, 
-                    0x16, 
-                    0x17, 
-                    0x18, 
-                    0x19, 
-                    0x1A, 
-                    0x1B, 
-                    0x1C, 
-                    0x1D, 
-                    0x1E, 
-                    0x1F, 
-                    0x20, 
-                    0x21, 
-                    0x22, 
-                    0x23, 
-                    0x24, 
-                    0x25, 
-                    0x26, 
-                    0x27, 
-                    0x28, 
-                    0x29, 
-                    0x2A, 
-                    0x2B, 
-                    0x2C, 
-                    0x2D, 
-                    0x2E, 
-                    0x30, 
-                    0x32, 
-                    0x34, 
-                    0x36, 
-                    0x38, 
-                    0x3A, 
-                    0x3C, 
-                    0x3E, 
-                    0x40, 
-                    0x42, 
-                    0x44, 
-                    0x46, 
-                    0x48, 
-                    0x4A, 
-                    0x4C, 
-                    0x4E, 
-                    0x50, 
-                    0x52, 
-                    0x54, 
-                    0x56, 
-                    0x58, 
-                    0x5B, 
-                    0x5E, 
-                    0x61, 
-                    0x64, 
-                    0x67, 
-                    0x6A, 
-                    0x6D, 
-                    0x70, 
-                    0x73, 
-                    0x76, 
-                    0x79, 
-                    0x7C, 
-                    0x7F, 
-                    0x82, 
-                    0x85, 
-                    0x88, 
-                    0x8D, 
-                    0x92, 
-                    0x97, 
-                    0x9C, 
-                    0xA1, 
-                    0xA6, 
-                    0xAC, 
-                    0xB2, 
-                    0xB8, 
-                    0xBE, 
-                    0xC4, 
-                    0xCA, 
-                    0xD0, 
-                    0xD6, 
-                    0xDC, 
-                    0xE3, 
-                    0xEA, 
-                    0xF1, 
-                    0xF8, 
-                    0xFC
-                }, 
-
-                Package (0x65)
-                {
-                    0x03, 
-                    0x04, 
-                    0x05, 
-                    0x06, 
-                    0x07, 
-                    0x08, 
-                    0x09, 
-                    0x0A, 
-                    0x0B, 
-                    0x0C, 
-                    0x0D, 
-                    0x0E, 
-                    0x0F, 
-                    0x10, 
-                    0x11, 
-                    0x12, 
-                    0x13, 
-                    0x14, 
-                    0x15, 
-                    0x16, 
-                    0x17, 
-                    0x18, 
-                    0x19, 
-                    0x1A, 
-                    0x1B, 
-                    0x1C, 
-                    0x1D, 
-                    0x1E, 
-                    0x1F, 
-                    0x20, 
-                    0x21, 
-                    0x22, 
-                    0x23, 
-                    0x24, 
-                    0x25, 
-                    0x26, 
-                    0x27, 
-                    0x28, 
-                    0x29, 
-                    0x2A, 
-                    0x2B, 
-                    0x2C, 
-                    0x2D, 
-                    0x2E, 
-                    0x30, 
-                    0x32, 
-                    0x34, 
-                    0x36, 
-                    0x38, 
-                    0x3A, 
-                    0x3C, 
-                    0x3E, 
-                    0x40, 
-                    0x42, 
-                    0x44, 
-                    0x46, 
-                    0x48, 
-                    0x4A, 
-                    0x4C, 
-                    0x4E, 
-                    0x50, 
-                    0x52, 
-                    0x54, 
-                    0x56, 
-                    0x58, 
-                    0x5B, 
-                    0x5E, 
-                    0x61, 
-                    0x64, 
-                    0x67, 
-                    0x6A, 
-                    0x6D, 
-                    0x70, 
-                    0x73, 
-                    0x76, 
-                    0x79, 
-                    0x7C, 
-                    0x7F, 
-                    0x82, 
-                    0x85, 
-                    0x88, 
-                    0x8D, 
-                    0x92, 
-                    0x97, 
-                    0x9C, 
-                    0xA1, 
-                    0xA6, 
-                    0xAC, 
-                    0xB2, 
-                    0xB8, 
-                    0xBE, 
-                    0xC4, 
-                    0xCA, 
-                    0xD0, 
-                    0xD6, 
-                    0xDC, 
-                    0xE3, 
-                    0xEA, 
-                    0xF1, 
-                    0xF8, 
-                    0xFC
                 }, 
 
                 Package (0x65)
@@ -45696,31 +45483,31 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                     0x52, 
                     0x54, 
                     0x56, 
-                    0x59, 
+                    0x58, 
+                    0x5A, 
                     0x5C, 
                     0x5F, 
                     0x62, 
-                    0x66, 
-                    0x6A, 
-                    0x6E, 
-                    0x72, 
-                    0x77, 
+                    0x65, 
+                    0x68, 
+                    0x6C, 
+                    0x70, 
+                    0x74, 
+                    0x78, 
                     0x7C, 
                     0x81, 
-                    0x87, 
-                    0x8D, 
-                    0x93, 
-                    0x9A, 
-                    0xA1, 
-                    0xA8, 
+                    0x86, 
+                    0x8C, 
+                    0x92, 
+                    0x98, 
+                    0x9E, 
+                    0xA4, 
+                    0xAA, 
                     0xB0, 
-                    0xB8, 
-                    0xC2, 
-                    0xCC, 
-                    0xD7, 
-                    0xE2, 
-                    0xEF, 
-                    0xFF
+                    0xB6, 
+                    0xBC, 
+                    0xC4, 
+                    0xCC
                 }
             })
             Method (_Q14, 0, NotSerialized)  // _Qxx: EC Query
@@ -45738,6 +45525,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 {
                     Notify (\_SB.PCI0.PEG0.PEGP.LCD0, 0x86)
                 }
+                Notify (KBD, 0x0406)
             }
 
             Method (_Q15, 0, NotSerialized)  // _Qxx: EC Query
@@ -45756,6 +45544,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                     Notify (\_SB.PCI0.PEG0.PEGP.LCD0, 0x87)
                 }
 
+                Notify (KBD, 0x0405)
                 Return (Zero)
             }
 
@@ -47994,6 +47783,15 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                 \_SB.PCI0.LPCB.EC.LED (0x0A, 0xC0)
             }
         }
+    }
+    Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }
+    Method (B1B4, 4, NotSerialized)
+    {
+        Store(Arg3, Local0)
+        Or(Arg2, ShiftLeft(Local0, 8), Local0)
+        Or(Arg1, ShiftLeft(Local0, 8), Local0)
+        Or(Arg0, ShiftLeft(Local0, 8), Local0)
+        Return(Local0)
     }
 }
 

@@ -5,13 +5,13 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-12-NvOptTbl.aml, Fri Feb  8 17:12:08 2019
+ * Disassembly of SSDT-12-NvOptTbl.aml, Sun Jul  7 08:55:24 2019
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x00001C05 (7173)
+ *     Length           0x00001B19 (6937)
  *     Revision         0x01
- *     Checksum         0xE3
+ *     Checksum         0xEC
  *     OEM ID           "LENOVO"
  *     OEM Table ID     "NvOptTbl"
  *     OEM Revision     0x00001000 (4096)
@@ -51,6 +51,7 @@ DefinitionBlock ("", "SSDT", 1, "LENOVO", "NvOptTbl", 0x00001000)
     External (_SB_.PCI0.SBN0, FieldUnitObj)    // (from opcode)
     External (_SB_.PCI0.SVIW, IntObj)    // (from opcode)
     External (_SB_.PR00._PSS, IntObj)    // (from opcode)
+    External (_SB_.SKOF, UnknownObj)    // (from opcode)
     External (BNTN, UnknownObj)    // (from opcode)
     External (CED0, UnknownObj)    // Warning: Unknown object
     External (DID1, UnknownObj)    // (from opcode)
@@ -177,12 +178,6 @@ DefinitionBlock ("", "SSDT", 1, "LENOVO", "NvOptTbl", 0x00001000)
         {
             Store (S0VI, NVVI)
             Store (S0DI, NVSI)
-            Store (Zero, MLTR)
-            If (LEqual (OSYS, 0x07DD))
-            {
-                Store (One, MLTR)
-            }
-
             If (\VIGD)
             {
                 MASP (One)
@@ -194,11 +189,6 @@ DefinitionBlock ("", "SSDT", 1, "LENOVO", "NvOptTbl", 0x00001000)
             Else
             {
                 MASP (One)
-            }
-
-            If (\_OSI ("Linux-Lenovo-NV-HDMI-Audio"))
-            {
-                Store (One, MLTR)
             }
         }
 
@@ -212,14 +202,6 @@ DefinitionBlock ("", "SSDT", 1, "LENOVO", "NvOptTbl", 0x00001000)
             Store (Or (ShiftLeft (NVSI, 0x10), NVVI), SVIW)
             Store (LTES, LMS0)
             Store (One, CED0)
-            If (LAnd (LGreaterEqual (OSYS, 0x07DF), \_SB.PCI0.PEG0.PEGP.HDAS))
-            {
-                Store (\_SB.PCI0.PEG0.PEGP.HDAS, MLTR)
-            }
-            Else
-            {
-                Store (Zero, MLTR)
-            }
         }
 
         Method (NVPF, 0, NotSerialized)
@@ -852,7 +834,7 @@ DefinitionBlock ("", "SSDT", 1, "LENOVO", "NvOptTbl", 0x00001000)
                     CreateField (Local0, 0x1B, 0x02, HDAC)
                     Store (One, OPEN)
                     Store (One, SHPC)
-                    Store (0x02, HDAC)
+                    Store (0x03, HDAC)
                     If (ToInteger (DVSC))
                     {
                         If (ToInteger (DVSR))
@@ -879,19 +861,9 @@ DefinitionBlock ("", "SSDT", 1, "LENOVO", "NvOptTbl", 0x00001000)
                     Store (Arg3, Local0)
                     CreateField (Local0, Zero, One, OPFL)
                     CreateField (Local0, One, One, OPVL)
-                    If (ToInteger (OPVL))
-                    {
-                        Store (Zero, \_SB.PCI0.OPTF)
-                        Store (Zero, HDAS)
-                        If (ToInteger (OPFL))
-                        {
-                            Store (One, \_SB.PCI0.OPTF)
-                            Store (One, HDAS)
-                        }
-                    }
-
-                    Store (\_SB.PCI0.OPTF, Local0)
-                    Return (Local0)
+                    Store (Zero, Local1)
+                    Store (MLTR, Local1)
+                    Return (Local1)
                 }
                 ElseIf (LEqual (_T_0, 0x10))
                 {
@@ -1150,18 +1122,8 @@ DefinitionBlock ("", "SSDT", 1, "LENOVO", "NvOptTbl", 0x00001000)
                     })
                     CreateField (Arg3, 0x03, One, AZDM)
                     CreateField (Arg3, 0x02, One, AZUD)
-                    If (ToInteger (AZDM))
-                    {
-                        Store (Zero, HDAS)
-                        If (ToInteger (AZUD))
-                        {
-                            Store (One, HDAS)
-                            Notify (\_SB.PCI0.PEG0.PEGA, One)
-                        }
-                    }
-
                     CreateField (JTB4, 0x02, One, AUDR)
-                    Store (HDAS, AUDR)
+                    Store (MLTR, AUDR)
                     Return (JTB4)
                 }
 
@@ -1226,7 +1188,6 @@ DefinitionBlock ("", "SSDT", 1, "LENOVO", "NvOptTbl", 0x00001000)
             {
                 \_SB.PCI0.PEG0.PEGP._ON ()
                 Store (Zero, DGOS)
-                Store (Zero, MLTF)
                 Store (Zero, OTMS)
             }
         }
@@ -1525,6 +1486,7 @@ DefinitionBlock ("", "SSDT", 1, "LENOVO", "NvOptTbl", 0x00001000)
 
             If (LEqual (Arg0, ToUUID ("a3132d01-8cda-49ba-a52e-bc9d46df6b81")))
             {
+                Store (Zero, \_SB.SKOF)
                 Return (\_SB.PCI0.PEG0.PEGP.NVPS (Arg0, Arg1, Arg2, Arg3))
             }
 
