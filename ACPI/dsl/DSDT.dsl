@@ -5,13 +5,13 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of DSDT.aml, Sun Jul  7 08:55:23 2019
+ * Disassembly of DSDT.aml, Sun Aug 11 09:51:59 2019
  *
  * Original Table Header:
  *     Signature        "DSDT"
- *     Length           0x00035ED3 (220883)
+ *     Length           0x00036304 (221956)
  *     Revision         0x02
- *     Checksum         0x3D
+ *     Checksum         0xF1
  *     OEM ID           "LENOVO"
  *     OEM Table ID     "CFL     "
  *     OEM Revision     0x20170001 (538378241)
@@ -711,6 +711,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
         WGC3,   8, 
         SPST,   8, 
         CA2D,   8, 
+        BATR,   8, 
         ECLP,   8, 
         SSP1,   8, 
         SSP2,   8, 
@@ -1484,6 +1485,12 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
         WMNS,   16, 
         ESPC,   8, 
         UCRT,   8, 
+        TJMX,   8, 
+        STAS,   8, 
+        SXI1,   8, 
+        SXI2,   8, 
+        SXP1,   8, 
+        SXP2,   8, 
         Offset (0x7E4), 
         ODV6,   8, 
         ODV7,   8, 
@@ -3221,6 +3228,27 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
                     0x02000000,         // Length
                     ,, , AddressRangeMemory, TypeStatic)
             })
+            If (LGreaterEqual (TLUD, 0x0404))
+            {
+                Device (SRRE)
+                {
+                    Name (_HID, EisaId ("PNP0C02"))  // _HID: Hardware ID
+                    Name (_UID, "SARESV")  // _UID: Unique ID
+                    Name (_STA, 0x03)  // _STA: Status
+                    Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                    {
+                        Name (BUF0, ResourceTemplate ()
+                        {
+                            Memory32Fixed (ReadOnly,
+                                0x40000000,         // Address Base
+                                0x00400000,         // Address Length
+                                )
+                        })
+                        Return (BUF0)
+                    }
+                }
+            }
+
             Name (EP_B, 0x00)
             Name (MH_B, 0x00)
             Name (PC_B, 0x00)
@@ -3859,7 +3887,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
     }
 
     Name (PNVB, 0x4FBF7298)
-    Name (PNVL, 0x0289)
+    Name (PNVL, 0x028B)
     OperationRegion (PNVA, SystemMemory, PNVB, PNVL)
     Field (PNVA, AnyAcc, Lock, Preserve)
     {
@@ -4106,7 +4134,9 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
         LTRO,   8, 
         GBES,   8, 
         SPPR,   8, 
-        SDPH,   8
+        SDPH,   8, 
+        EMCE,   8, 
+        SDCE,   8
     }
 
     Scope (\_SB)
@@ -5988,6 +6018,11 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
             APE2,   1, 
             APE3,   1, 
             ADMI,   1, 
+            Offset (0x1800), 
+            ACWA,   32, 
+            DCWA,   32, 
+            ACET,   32, 
+            DCET,   32, 
             Offset (0x18E8), 
             PMC4,   31, 
             CECE,   1, 
@@ -17845,6 +17880,18 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
         Device (PEMC)
         {
             Name (_ADR, 0x001A0000)  // _ADR: Address
+            Method (_STA, 0, NotSerialized)  // _STA: Status
+            {
+                If (LEqual (\EMCE, 0x00))
+                {
+                    Return (0x00)
+                }
+                Else
+                {
+                    Return (0x0F)
+                }
+            }
+
             OperationRegion (SCSR, PCI_Config, 0x00, 0x0100)
             Field (SCSR, WordAcc, NoLock, Preserve)
             {
@@ -17859,6 +17906,8 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
             {
                 Stall (0x32)
                 Store (0x00, PGEN)
+                PCRA (0x52, 0x1C20, 0x00)
+                PCRA (0x52, 0x4820, 0x00)
                 And (PSTA, 0xFFFFFFFC, PSTA)
                 Store (PSTA, TEMP)
             }
@@ -32236,6 +32285,264 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
         }
     }
 
+    Scope (\_SB.PCI0.I2C4)
+    {
+        If (LOr (LEqual (PLID, 0x14), LEqual (PLID, 0x15)))
+        {
+            Device (PA01)
+            {
+                Name (_HID, "MCHP1930")  // _HID: Hardware ID
+                Name (_UID, 0x01)  // _UID: Unique ID
+                Name (_S0W, 0x03)  // _S0W: S0 Device Wake State
+                Method (_STA, 0, NotSerialized)  // _STA: Status
+                {
+                    If (POME)
+                    {
+                        Return (0x0F)
+                    }
+
+                    Return (0x00)
+                }
+
+                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
+                {
+                    Name (RBUF, ResourceTemplate ()
+                    {
+                        I2cSerialBusV2 (0x0018, ControllerInitiated, 0x00061A80,
+                            AddressingMode7Bit, "\\_SB.PCI0.I2C4",
+                            0x00, ResourceConsumer, , Exclusive,
+                            )
+                    })
+                    Return (RBUF)
+                }
+
+                Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
+                {
+                    Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                    If (LNotEqual (Arg0, ToUUID ("033771e0-1705-47b4-9535-d1bbe14d9a09")))
+                    {
+                        Return (Buffer (0x01)
+                        {
+                             0x00                                           
+                        })
+                    }
+
+                    While (One)
+                    {
+                        Store (ToInteger (Arg2), _T_0)
+                        If (LEqual (_T_0, 0x00))
+                        {
+                            If (LEqual (Arg1, 0x00))
+                            {
+                                Return (Buffer (0x01)
+                                {
+                                     0x03                                           
+                                })
+                            }
+
+                            Break
+                        }
+                        ElseIf (LEqual (_T_0, 0x01))
+                        {
+                            If (LEqual (Arg1, 0x00))
+                            {
+                                Name (PBUF, Package (0x08)
+                                {
+                                    "CPU_SA", 
+                                    0x02, 
+                                    "CPU_1", 
+                                    0x02, 
+                                    "CPU_2", 
+                                    0x02, 
+                                    "STORAGE", 
+                                    0x05
+                                })
+                                Return (PBUF)
+                            }
+
+                            Break
+                        }
+
+                        Break
+                    }
+
+                    Return (Buffer (0x01)
+                    {
+                         0x00                                           
+                    })
+                }
+            }
+
+            Device (PA02)
+            {
+                Name (_HID, "MCHP1930")  // _HID: Hardware ID
+                Name (_UID, 0x02)  // _UID: Unique ID
+                Name (_S0W, 0x03)  // _S0W: S0 Device Wake State
+                Method (_STA, 0, NotSerialized)  // _STA: Status
+                {
+                    If (POME)
+                    {
+                        Return (0x0F)
+                    }
+
+                    Return (0x00)
+                }
+
+                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
+                {
+                    Name (RBUF, ResourceTemplate ()
+                    {
+                        I2cSerialBusV2 (0x0019, ControllerInitiated, 0x00061A80,
+                            AddressingMode7Bit, "\\_SB.PCI0.I2C4",
+                            0x00, ResourceConsumer, , Exclusive,
+                            )
+                    })
+                    Return (RBUF)
+                }
+
+                Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
+                {
+                    Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                    If (LNotEqual (Arg0, ToUUID ("033771e0-1705-47b4-9535-d1bbe14d9a09")))
+                    {
+                        Return (Buffer (0x01)
+                        {
+                             0x00                                           
+                        })
+                    }
+
+                    While (One)
+                    {
+                        Store (ToInteger (Arg2), _T_0)
+                        If (LEqual (_T_0, 0x00))
+                        {
+                            If (LEqual (Arg1, 0x00))
+                            {
+                                Return (Buffer (0x01)
+                                {
+                                     0x03                                           
+                                })
+                            }
+
+                            Break
+                        }
+                        ElseIf (LEqual (_T_0, 0x01))
+                        {
+                            If (LEqual (Arg1, 0x00))
+                            {
+                                Name (PBUF, Package (0x08)
+                                {
+                                    "DISPLAY_BKLT", 
+                                    0x0A, 
+                                    "MAINMEM_MEMORY", 
+                                    0x02, 
+                                    "MAINMEM_CPU", 
+                                    0x02, 
+                                    "", 
+                                    0x00
+                                })
+                                Return (PBUF)
+                            }
+
+                            Break
+                        }
+
+                        Break
+                    }
+
+                    Return (Buffer (0x01)
+                    {
+                         0x00                                           
+                    })
+                }
+            }
+
+            Device (PA03)
+            {
+                Name (_HID, "MCHP1930")  // _HID: Hardware ID
+                Name (_UID, 0x03)  // _UID: Unique ID
+                Name (_S0W, 0x03)  // _S0W: S0 Device Wake State
+                Method (_STA, 0, NotSerialized)  // _STA: Status
+                {
+                    If (POME)
+                    {
+                        Return (0x0F)
+                    }
+
+                    Return (0x00)
+                }
+
+                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
+                {
+                    Name (RBUF, ResourceTemplate ()
+                    {
+                        I2cSerialBusV2 (0x001A, ControllerInitiated, 0x00061A80,
+                            AddressingMode7Bit, "\\_SB.PCI0.I2C4",
+                            0x00, ResourceConsumer, , Exclusive,
+                            )
+                    })
+                    Return (RBUF)
+                }
+
+                Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
+                {
+                    Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                    If (LNotEqual (Arg0, ToUUID ("033771e0-1705-47b4-9535-d1bbe14d9a09")))
+                    {
+                        Return (Buffer (0x01)
+                        {
+                             0x00                                           
+                        })
+                    }
+
+                    While (One)
+                    {
+                        Store (ToInteger (Arg2), _T_0)
+                        If (LEqual (_T_0, 0x00))
+                        {
+                            If (LEqual (Arg1, 0x00))
+                            {
+                                Return (Buffer (0x01)
+                                {
+                                     0x03                                           
+                                })
+                            }
+
+                            Break
+                        }
+                        ElseIf (LEqual (_T_0, 0x01))
+                        {
+                            If (LEqual (Arg1, 0x00))
+                            {
+                                Name (PBUF, Package (0x08)
+                                {
+                                    "DISPLAY_PANEL", 
+                                    0x0A, 
+                                    "GPU_1", 
+                                    0x02, 
+                                    "GPU_2", 
+                                    0x02, 
+                                    "SYSTEM_POWER", 
+                                    0x02
+                                })
+                                Return (PBUF)
+                            }
+
+                            Break
+                        }
+
+                        Break
+                    }
+
+                    Return (Buffer (0x01)
+                    {
+                         0x00                                           
+                    })
+                }
+            }
+        }
+    }
+
     Scope (\_SB.PCI0.SPI1)
     {
         Name (SPIP, 0x00)
@@ -44628,7 +44935,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
 
         Method (_Q7F, 0, NotSerialized)  // _Qxx: EC Query
         {
-            Fatal (0x01, 0x80010000, 0x00017A8F)
+            Fatal (0x01, 0x80010000, 0x00017CE5)
         }
 
         Method (_Q46, 0, NotSerialized)  // _Qxx: EC Query
