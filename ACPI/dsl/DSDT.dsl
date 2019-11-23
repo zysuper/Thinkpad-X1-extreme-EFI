@@ -5,13 +5,13 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of DSDT.aml, Sun Aug 11 09:51:59 2019
+ * Disassembly of DSDT.aml, Sat Nov 23 13:50:22 2019
  *
  * Original Table Header:
  *     Signature        "DSDT"
- *     Length           0x00036304 (221956)
+ *     Length           0x00036309 (221961)
  *     Revision         0x02
- *     Checksum         0xF1
+ *     Checksum         0x2A
  *     OEM ID           "LENOVO"
  *     OEM Table ID     "CFL     "
  *     OEM Revision     0x20170001 (538378241)
@@ -389,7 +389,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
     Name (SSX, One)
     Name (SS4, One)
     Name (SSY, One)
-    OperationRegion (GNVS, SystemMemory, 0x4FBE9000, 0x0802)
+    OperationRegion (GNVS, SystemMemory, 0x58CF2000, 0x0802)
     Field (GNVS, AnyAcc, Lock, Preserve)
     {
         OSYS,   16, 
@@ -3886,7 +3886,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
         }
     }
 
-    Name (PNVB, 0x4FBF7298)
+    Name (PNVB, 0x58CFF298)
     Name (PNVL, 0x028B)
     OperationRegion (PNVA, SystemMemory, PNVB, PNVL)
     Field (PNVA, AnyAcc, Lock, Preserve)
@@ -20760,7 +20760,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
     Name (ECUP, 0x01)
     Mutex (EHLD, 0x00)
     Name (LDLY, 0x012C)
-    Name (TNVB, 0x4FBD7000)
+    Name (TNVB, 0x58CE0000)
     Name (TNVL, 0x0043)
     OperationRegion (BNVS, SystemMemory, TNVB, TNVL)
     Field (BNVS, AnyAcc, Lock, Preserve)
@@ -22669,7 +22669,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
             }
         }
 
-        If (LAnd (LEqual (Arg0, 0x04), LEqual (IGDS, Zero)))
+        If (LAnd (LOr (LEqual (Arg0, 0x03), LEqual (Arg0, 0x04)), LEqual (IGDS, Zero)))
         {
             Store (One, \_SB.SKOF)
         }
@@ -40391,7 +40391,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
     {
     }
 
-    OperationRegion (MNVS, SystemMemory, 0x4FC67018, 0x1000)
+    OperationRegion (MNVS, SystemMemory, 0x58D6F018, 0x1000)
     Field (MNVS, DWordAcc, NoLock, Preserve)
     {
         Offset (0xD00), 
@@ -41187,7 +41187,7 @@ DefinitionBlock ("", "DSDT", 2, "LENOVO", "CFL     ", 0x20170001)
         Return (Zero)
     }
 
-    Name (ONVA, 0x4FC02000)
+    Name (ONVA, 0x58D0A000)
     Name (ONVL, 0x00FA)
     OperationRegion (ONVS, SystemMemory, ONVA, ONVL)
     Field (ONVS, AnyAcc, Lock, Preserve)
