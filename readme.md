@@ -17,6 +17,19 @@
 - Wireless network card and Bluetooth (requires adapter board to connect with smart card, solution from [@Errrneist](https://github.com/Errrneist/Hackintosh-Thinkpad-X1-Extreme))
 - intel bluetooth worked (Thanks for [IntelBluetoothFirmware](https://github.com/zxystd/IntelBluetoothFirmware))
 
+## Use intel original card Bluetooth
+
+By default, the USB port of the Bluetooth original card is blocked. If you need to use the original Intel network card, modify config.plist yourself to remove the shield of `HS14`.
+
+```xml
+<dict>
+   <key>Arguments</key>
+   <!-- Remove the shield of HS14 -->
+   <string>-lilubetaall -cdfon uia_exclude=HS14,HS05,HS06,USR1,USR2</string>
+         ...
+</dict>
+```
+
 ## Installation Precautions
 
 - This EFI supports installation when using it, without the need for a separate config.plist.
