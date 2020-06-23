@@ -15,6 +15,7 @@
 - Keyboard function keys, volume and screen brightness (DSDT EC \_Q14, \_Q15 patch)
 - card reader
 - Wireless network card and Bluetooth (requires adapter board to connect with smart card, solution from [@Errrneist](https://github.com/Errrneist/Hackintosh-Thinkpad-X1-Extreme))
+- intel bluetooth worked (Thanks for [IntelBluetoothFirmware](https://github.com/zxystd/IntelBluetoothFirmware))
 
 ## Installation Precautions
 

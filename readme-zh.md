@@ -15,6 +15,20 @@
 - 键盘功能键，音量与屏幕亮度（DSDT EC \_Q14,\_Q15 patch)
 - 读卡器
 - 无线网卡与蓝牙 （需要转接板与 smart card 连线， 来自 [@Errrneist](https://github.com/Errrneist/Hackintosh-Thinkpad-X1-Extreme) 的解决方案）
+- intel 原装卡蓝牙支持 (谢谢 @zxystd [IntelBluetoothFirmware](https://github.com/zxystd/IntelBluetoothFirmware))
+
+## 使用 intel 原装卡蓝牙
+
+默认屏蔽了 intel 原装卡蓝牙的 usb 口。 如果你需要使用 intel 原装网卡，自己修改 config.plist, 去掉对 `HS14` 的屏蔽。
+
+```xml
+<dict>
+  <key>Arguments</key>
+  <!-- 去掉 HS14 的屏蔽 -->
+  <string>-lilubetaall -cdfon uia_exclude=HS14,HS05,HS06,USR1,USR2</string>
+        ...
+</dict>
+```
 
 ## 安装注意事项
 
