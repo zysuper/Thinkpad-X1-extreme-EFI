@@ -1,3 +1,5 @@
+## [Goto Chinese Readme](./readme-zh.md)
+
 ## update log
 
 - [20-7-5] add opencore efi. (beta version!!)
