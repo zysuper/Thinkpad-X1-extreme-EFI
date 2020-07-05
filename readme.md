@@ -1,5 +1,6 @@
 ## update log
 
+- [20-7-5] add opencore efi. (beta version!!)
 - [20-7-5] use virualsmc replace fakesmc.
 - [20-7-5] hotfix for bettery and keyboard function. (removed dsdt.aml)
 - [20-6-23] intel bluetooth supported.
@@ -19,6 +20,12 @@
 - card reader
 - Wireless network card and Bluetooth (requires adapter board to connect with smart card, solution from [@Errrneist](https://github.com/Errrneist/Hackintosh-Thinkpad-X1-Extreme))
 - intel bluetooth worked (Thanks for [IntelBluetoothFirmware](https://github.com/zxystd/IntelBluetoothFirmware))
+
+## Opencore efi version considerations
+
+Opencore efi is still in the development and testing stage, although it can work except for hibernation.
+
+You need to generate SMBIOS yourself([GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)),reference for specific steps: [coffee-lake-8th-gen](https://khronokernel.github.io/Opencore-Vanilla-Laptop-Guide/config.plist/coffee-lake-8th-gen.html#Platforminfo)
 
 ## Use intel original card Bluetooth
 

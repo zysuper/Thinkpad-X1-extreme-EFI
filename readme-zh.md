@@ -1,5 +1,6 @@
 ## 更新日志
 
+- [20-7-5] 提供与时俱进的 OpenCore EFI 测试版.
 - [20-7-5] 使用 virualsmc 替换了 fakesmc.
 - [20-7-5] 电池和键盘功能键使用热补丁技术，不再依赖 dsdt.aml.
 - [20-6-23] 支持 intel 原生蓝牙.
@@ -19,6 +20,13 @@
 - 读卡器
 - 无线网卡与蓝牙 （需要转接板与 smart card 连线， 来自 [@Errrneist](https://github.com/Errrneist/Hackintosh-Thinkpad-X1-Extreme) 的解决方案）
 - intel 原装卡蓝牙支持 (谢谢 @zxystd [IntelBluetoothFirmware](https://github.com/zxystd/IntelBluetoothFirmware))
+
+## OpenCore 使用注意事项
+
+OpenCore EFI 还处于开发测试阶段，虽然除了休眠，其他功能都可以 work 了。
+
+你需要自己生成 SMBIOS ([GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)),
+你可以参考指南：[coffee-lake-8th-gen](https://khronokernel.github.io/Opencore-Vanilla-Laptop-Guide/config.plist/coffee-lake-8th-gen.html#Platforminfo)
 
 ## 使用 intel 原装卡蓝牙
 
