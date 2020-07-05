@@ -196,6 +196,202 @@
 					<key>Replace</key>
 					<data>SUdQVQhfQURSDAAAAgA=</data>
 				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>_Q13 to XQ13(FN+4)</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1ExMw==
+					</data>
+					<key>Replace</key>
+					<data>
+					WFExMw==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>_Q14 to XQ14(up)</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1ExNA==
+					</data>
+					<key>Replace</key>
+					<data>
+					WFExNA==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>_Q15 to XQ15(down)</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1ExNQ==
+					</data>
+					<key>Replace</key>
+					<data>
+					WFExNQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>_Q16 to XQ16(dualScreen)</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1ExNg==
+					</data>
+					<key>Replace</key>
+					<data>
+					WFExNg==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>_Q6A to XQ6A(Microphone)</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1E2QQ==
+					</data>
+					<key>Replace</key>
+					<data>
+					WFE2QQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>_Q64 to XQ64(Wireless)</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1E2NA==
+					</data>
+					<key>Replace</key>
+					<data>
+					WFE2NA==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>_Q65 to XQ65(CutScreen)</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1E2NQ==
+					</data>
+					<key>Replace</key>
+					<data>
+					WFE2NQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>_Q66 to XQ66(Settings)</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1E2Ng==
+					</data>
+					<key>Replace</key>
+					<data>
+					WFE2Ng==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>_Q60 to XQ60(Bluetooth)</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1E2MA==
+					</data>
+					<key>Replace</key>
+					<data>
+					WFE2MA==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>_Q61 to XQ61(Keyboard)</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1E2MQ==
+					</data>
+					<key>Replace</key>
+					<data>
+					WFE2MQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>_Q62 to XQ62(Star)</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1E2Mg==
+					</data>
+					<key>Replace</key>
+					<data>
+					WFE2Mg==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>battery GBIF03 to XBIF03</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					R0JJRgM=
+					</data>
+					<key>Replace</key>
+					<data>
+					WEJJRgM=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>battery GBST04 to XBST04</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					R0JTVAQ=
+					</data>
+					<key>Replace</key>
+					<data>
+					WEJTVAQ=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>battery GBIX03 to XBIX03</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					R0JJWAM=
+					</data>
+					<key>Replace</key>
+					<data>
+					WEJJWAM=
+					</data>
+				</dict>
 			</array>
 		</dict>
 		<key>FixHeaders</key>
