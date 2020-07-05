@@ -1,5 +1,7 @@
 ## update log
 
+- [20-7-5] use virualsmc replace fakesmc.
+- [20-7-5] hotfix for bettery and keyboard function. (removed dsdt.aml)
 - [19-5-29] add noTouchId.kext. MacOS is expecting Touch ID to be available, causing lag on password prompts, this kext can fix this.
 
 ## The part that can work
