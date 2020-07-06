@@ -1,3 +1,7 @@
+# 注意啦！
+
+clover 版本 EFI 停止维护，未来主营 OpenCore EFI。
+
 ## 更新日志
 
 - [20-7-5] 提供与时俱进的 OpenCore EFI 测试版.

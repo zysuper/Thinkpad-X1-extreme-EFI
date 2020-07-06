@@ -1,3 +1,7 @@
+# Notice !!!
+
+The maintenance of clover version EFI is discontinued, and the future will focus on OpenCore EFI.
+
 ## [Goto Chinese Readme](./readme-zh.md)
 
 ## update log
