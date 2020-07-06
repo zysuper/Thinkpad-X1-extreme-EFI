@@ -23,7 +23,7 @@
 
 ## OpenCore 使用注意事项
 
-OpenCore EFI 还处于开发测试阶段，虽然除了休眠，其他功能都可以 work 了。
+OpenCore EFI 还处于开发测试阶段。
 
 你需要自己生成 SMBIOS ([GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)),
 你可以参考指南：[coffee-lake-8th-gen](https://khronokernel.github.io/Opencore-Vanilla-Laptop-Guide/config.plist/coffee-lake-8th-gen.html#Platforminfo)
