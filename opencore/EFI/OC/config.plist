@@ -24,6 +24,14 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
+				<string>SSDT-GPRW.aml</string>
+				<key>Path</key>
+				<string>SSDT-GPRW.aml</string>
+				<key>Enabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>SSDT-HPET.aml</string>
 				<key>Path</key>
 				<string>SSDT-HPET.aml</string>
@@ -67,6 +75,14 @@
 				<string>SSDT-PNLF-CFL.aml</string>
 				<key>Path</key>
 				<string>SSDT-PNLF-CFL.aml</string>
+				<key>Enabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-PTSWAK.aml</string>
+				<key>Path</key>
+				<string>SSDT-PTSWAK.aml</string>
 				<key>Enabled</key>
 				<true/>
 			</dict>
@@ -336,6 +352,84 @@
 				<key>Limit</key>
 				<integer>0</integer>
 			</dict>
+			<dict>
+				<key>Mask</key>
+				<data></data>
+				<key>OemTableId</key>
+				<data></data>
+				<key>Skip</key>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>0</integer>
+				<key>ReplaceMask</key>
+				<data></data>
+				<key>Replace</key>
+				<data>WlBUUwE=</data>
+				<key>Comment</key>
+				<string>_PTS to ZPTS(1,N)</string>
+				<key>Count</key>
+				<integer>1</integer>
+				<key>Find</key>
+				<data>X1BUUwE=</data>
+				<key>TableSignature</key>
+				<data></data>
+				<key>Enabled</key>
+				<true/>
+				<key>Limit</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Mask</key>
+				<data></data>
+				<key>OemTableId</key>
+				<data></data>
+				<key>Skip</key>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>0</integer>
+				<key>ReplaceMask</key>
+				<data></data>
+				<key>Replace</key>
+				<data>WldBSwk=</data>
+				<key>Comment</key>
+				<string>_WAK to ZWAK(1,S)</string>
+				<key>Count</key>
+				<integer>1</integer>
+				<key>Find</key>
+				<data>X1dBSwk=</data>
+				<key>TableSignature</key>
+				<data></data>
+				<key>Enabled</key>
+				<true/>
+				<key>Limit</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>Mask</key>
+				<data></data>
+				<key>OemTableId</key>
+				<data></data>
+				<key>Skip</key>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>0</integer>
+				<key>ReplaceMask</key>
+				<data></data>
+				<key>Replace</key>
+				<data>WFBSVwI=</data>
+				<key>Comment</key>
+				<string>GPRW to XPRW</string>
+				<key>Count</key>
+				<integer>1</integer>
+				<key>Find</key>
+				<data>R1BSVwI=</data>
+				<key>TableSignature</key>
+				<data></data>
+				<key>Enabled</key>
+				<true/>
+				<key>Limit</key>
+				<integer>0</integer>
+			</dict>
 		</array>
 		<key>Quirks</key>
 		<dict>
@@ -498,6 +592,22 @@
 				<key>MinKernel</key>
 				<string></string>
 				<key>ExecutablePath</key>
+				<string>Contents/MacOS/HibernationFixup</string>
+				<key>BundlePath</key>
+				<string>HibernationFixup.kext</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string></string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+				<key>Enabled</key>
+				<true/>
+				<key>MinKernel</key>
+				<string></string>
+				<key>ExecutablePath</key>
 				<string>Contents/MacOS/IntelBluetoothFirmware</string>
 				<key>BundlePath</key>
 				<string>IntelBluetoothFirmware.kext</string>
@@ -626,9 +736,9 @@
 				<key>MinKernel</key>
 				<string></string>
 				<key>ExecutablePath</key>
-				<string></string>
+				<string>Contents/MacOS/USBInjectAll</string>
 				<key>BundlePath</key>
-				<string>USBPorts.kext</string>
+				<string>USBInjectAll.kext</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -939,21 +1049,22 @@
 			<key>ThirdPartyDrives</key>
 			<false/>
 			<key>XhciPortLimit</key>
-			<true/>
+			<false/>
 		</dict>
 	</dict>
 	<key>Misc</key>
 	<dict>
 		<key>BlessOverride</key>
-		<array/>
+		<array>
+		</array>
 		<key>Boot</key>
 		<dict>
 			<key>ConsoleAttributes</key>
 			<integer>0</integer>
 			<key>HibernateMode</key>
-			<string>None</string>
+			<string>Auto</string>
 			<key>HideAuxiliary</key>
-			<false/>
+			<true/>
 			<key>PickerAttributes</key>
 			<integer>1</integer>
 			<key>PickerAudioAssist</key>
@@ -984,7 +1095,7 @@
 			<key>SysReport</key>
 			<false/>
 			<key>Target</key>
-			<integer>67</integer>
+			<integer>0</integer>
 		</dict>
 		<key>Entries</key>
 		<array>
@@ -1051,7 +1162,7 @@
 				<key>DefaultBackgroundColor</key>
 				<data>AAAAAA==</data>
 				<key>UIScale</key>
-				<data>AQ==</data>
+				<data>Ag==</data>
 			</dict>
 			<key>4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
 			<dict>
@@ -1063,7 +1174,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>-v keepsyms=1 debug=0x100 alcid=11 -wegnoegpu -cdfon -igfxmlr uia_exclude=HS05,HS06,USR1,USR2</string>
+				<string>keepsyms=1 debug=0x100 alcid=11 -wegnoegpu -cdfon -igfxmlr uia_exclude=HS05,HS06,USR1,USR2</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>prev-lang:kbd</key>
