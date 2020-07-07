@@ -4,13 +4,20 @@ clover 版本 EFI 停止维护，未来主营 OpenCore EFI。
 
 ## 更新日志
 
+- [20-7-7] OpenCore EFI 已经完成.
 - [20-7-5] 提供与时俱进的 OpenCore EFI 测试版.
 - [20-7-5] 使用 virualsmc 替换了 fakesmc.
 - [20-7-5] 电池和键盘功能键使用热补丁技术，不再依赖 dsdt.aml.
 - [20-6-23] 支持 intel 原生蓝牙.
 - [19-5-29] 增加 noTouchId.kext. 解决输入密码时，macos 认为指纹模块存在导致的卡顿.
 
-## 可以工作的部分
+## OpenCore 没有解决或者还没处理的部分
+
+- Intel WIFI 的驱动
+- HDMI 视频输出
+- 触控屏驱动 (等我有空)
+
+## Clover EFI 可以工作的部分
 
 - 声卡（AppleALC）
 - intel 有线千兆网卡（mini RJ45）
@@ -26,8 +33,6 @@ clover 版本 EFI 停止维护，未来主营 OpenCore EFI。
 - intel 原装卡蓝牙支持 (谢谢 @zxystd [IntelBluetoothFirmware](https://github.com/zxystd/IntelBluetoothFirmware))
 
 ## OpenCore 使用注意事项
-
-OpenCore EFI 还处于开发测试阶段。
 
 你需要自己生成 SMBIOS ([GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)),
 你可以参考指南：[coffee-lake-8th-gen](https://khronokernel.github.io/Opencore-Vanilla-Laptop-Guide/config.plist/coffee-lake-8th-gen.html#Platforminfo)

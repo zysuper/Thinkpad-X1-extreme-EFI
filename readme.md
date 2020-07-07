@@ -6,13 +6,20 @@ The maintenance of clover version EFI is discontinued, and the future will focus
 
 ## update log
 
+- [20-7-7] OpenCore EFI is done!
 - [20-7-5] add opencore efi. (beta version!!)
 - [20-7-5] use virualsmc replace fakesmc.
 - [20-7-5] hotfix for bettery and keyboard function. (removed dsdt.aml)
 - [20-6-23] intel bluetooth supported.
 - [19-5-29] add noTouchId.kext. MacOS is expecting Touch ID to be available, causing lag on password prompts, this kext can fix this.
 
-## The part that can work
+## OpenCore unsolved or unprocessed part
+
+- Intel WIFI driver
+- HDMI video output
+- Touch screen driver (When I have free time)
+
+## Clover EFI can work part
 
 - Sound card (AppleALC)
 - intel cable Gigabit LAN (mini RJ45)
