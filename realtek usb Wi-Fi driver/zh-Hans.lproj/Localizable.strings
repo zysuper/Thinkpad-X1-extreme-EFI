@@ -1,0 +1,205 @@
+/* Localizable String */
+sUIName = "无线网络向导";
+sUIVersion = "面板版本";
+sDriverVersion = "驱动版本: v";
+sCopyright = "Copyright 2020. zh-Hans by airomeo";
+
+// Button
+OK ="确定";
+CANCEL ="取消";
+NO ="否";
+YES ="是";
+Join="加入";
+Profiles="配置";
+Join_Other="添加网络";
+Show_Nets="显示附近网络";
+Apply="应用";
+Remove="删除";
+PIN="PIN";
+PBC="PBC";
+Forget="忽略此网络";
+
+//DropDownMenu
+State_RfOn="USB-WiFi: 已打开";
+State_RfOff="USB-WiFi: 已关闭";
+State_Scan="USB-WiFi: 正在扫描网络...";
+State_Unplug="没有检测到 USB-WiFi";
+State_Disable="请启用 USB-WiFi";
+
+Info_IfName="界面名称:";
+Info_MacAddr="地址:";
+Info_IpAddr= "IP 地址:";
+Info_Router= "路由器:";
+Info_Reachable= "互联网: 可用";
+Info_Unreachable= "互联网: 不可用";
+//Info_Security
+Info_BSSID= "BSSID:";
+Info_Channel= "通道:";
+Info_CountryCode= "区域码:";
+Info_RSSI= "RSSI:";
+Info_Noise= "Noise:";
+Info_TxRate= "Tx Rate:";
+Info_PhyMode= "PHY Mode:";
+Info_McsIndex= "MCS Index:";
+
+Radio_ON ="打开 USB-WiFi";
+Radio_OFF ="关闭 USB-WiFi";
+Uninstall = "卸载 USB-WiFi";
+DebugTool = "Wlan 诊断工具";
+Join_Other_Network="加入其他网络...";
+Create_Adhoc="创建 AdHoc 网络...";
+WPS_Fun="WPS...";
+Open_Utility="打开无线网络向导...";
+Open_Preference="打开网络设置...";
+
+//ScanTable View
+ScanTable_View_Title="请选择你要加入的网络。";
+ScanTable_View_SubTitle="从列表中选择要加入的网络，然后根据需要输入网络密码。";
+Associated="已连接";
+SignalStrength="信号强度";
+Scanning="正在扫描...";
+
+// Setting Field View
+Join_BroadcastSecAP1="This network";
+Join_BroadcastSecAP2="requires a";
+Join_BroadcastSecAP3="password";
+Join_HiddenSecAP1="This hidden network requires a";
+Join_HiddenSecAP2="password";
+Join_HiddenOpenAP="Enter Hidden network Name.";
+
+// Join Other
+Create_Infra_Title="加入其他网络。";
+Create_Infra_SubTitle="输入要加入的网络的名称，然后根据需要输入密码。";
+Create_Adhoc_Title="创建 AdHoc 网络。";
+Create_Adhoc_SubTitle="输入您要创建的 AdHoc 网络的名称。";
+
+//Setting Field
+Security_None="None";
+Security_OpenWep="Open_System WEP";
+Security_SharedWep="Shared_Key WEP";
+Security_WpaTkip="WPA_PSK TKIP";
+Security_WpaAes="WPA_PSK AES";
+Security_Wpa2Tkip="WPA2_PSK TKIP";
+Security_Wpa2Aes="WPA2_PSK AES";
+Security_WpaTkip1X="WPA Enterprise TKIP";
+Security_WpaAes1X="WPA Enterprise AES";
+Security_Wpa2Tkip1X="WPA2 Enterprise TKIP";
+Security_Wpa2Aes1X="WPA2 Enterprise AES";
+Security_WEP1X="802.1X WEP";
+Security_WpaNoneTkip="WPA_None TKIP";
+Security_WpaNoneAes="WPA_None AES";
+Security_MixMode="security"; //{5.0.5.b5}
+Security_Wpa3Sae="WPA3 SAE";
+Security_Wpa3SuiteB="WPA3 SuiteB";
+Security_Wpa3Owe="WPA3 OWE";
+
+//Profile Security Field
+Profile_Wep="WEP";
+Profile_Wpa="WPA Personal";
+Profile_Wpa2="WPA2 Personal";
+Profile_Wpa1X="WPA Enterprise";
+Profile_Wpa21X="WPA2 Enterprise";
+Profile_Wpa3="WPA3 Personal";
+Profile_Wpa31X="WPA3 Enterprise";
+Profile_WpaNone="WPA-None";
+
+NetworkName="网络名称:";
+Security="安全性:";
+Password="密码:";
+ShowPassword="显示密码";
+ASCII="ASCII码";
+UserName="用户名:";
+EAP="802.1x EAP:";
+PEAP="AUTO(PEAP)";
+TLS="EAP-TLS";
+TTLS="EAP-TTLS";
+LEAP="EAP-LEAP";
+CA_Cert="CA 证书:";
+Client_Cert="客户端证书:";
+Private_Key="私钥:";
+Private_Key_Pwd="私钥密码:";
+
+Choose_Private_Key="选择私钥文件 (PEM/DER/PFX)";
+Choose_Client_Cert="选择客户端证书文件 (PEM/DER/PFX)";
+Choose_CA_Cert="选择CA证书文件 (PEM/DER/CER)";
+
+Select_KeyChain_Cert_Desc="从钥匙串中选择证书";
+Select_File_Cert_Desc ="选择证书文件";
+Select_KeyChain_Identity_Desc ="从钥匙串中选择身份";
+Select_KeyChain_Key_Desc ="从钥匙串中选择私钥";
+Select_File_Key_Desc ="选择私钥文件";
+
+Cert_Expire="证书文件已过期";
+
+Cert_Examine_Title1="正在验证网络";
+Cert_Examine_Title2=" ";
+Cert_Examine_Info1="对服务器进行身份验证之前";
+Cert_Examine_Info2="，则应检查服务器的证书以确保它适用于此网络。\n \n要查看证书，请单击\'显示证书\'。";
+
+// Profiles
+PreferredNet="首选网络:";
+StateTitle="状态";
+SSIDTitle="SSID";
+SecurityTitle="安全性";
+
+//WPS
+WPS_PIN_Title=" 请将PIN码输入AP的配置页面";
+WPS_PBC_Title="执行按钮配置（PBC）";
+WPS_Second="秒";
+WPS_Progress="WPS进度:";
+WPS_init_Str = " 初始化WPS过程 ";
+WPS_scan_Str = " 扫描活动的WPS AP ";
+WPS_connect_Str = " 连接到活动的WPS AP ";
+WPS_handshake_Str =" 初始化WPS握手 ";
+WPS_exchange_Str =" 交换WPS消息";
+WPS_done_Str = " 交换WPS消息[完成]";
+WPS_fail_Str = " 交换WPS消息失败，请尝试连接其他WPS AP ";
+WPS_start_Str = " WPS开始";
+WPS_finish_Str = " WPS协议完成!!";
+WPS_auto_connect_Str = " 自动连接到WPS AP ";
+WPS_timeout_Str = " WPS超时!!";
+WPS_connection_failed_Str = " 连接失败。请稍后再试!!";
+
+Wps_overlap_Str = " 会话重叠";
+Wps_more_pbc_Str = " 在PBC模式下有多个AP！";
+Wps_retry_Str = " 请使用PIN或稍等片刻然后重试";
+
+ERROR0 = "错误";
+ERROR1 = "请输入密钥！";
+ERROR2 = "错误的WEP密钥索引！";
+ERROR3 = "密钥长度为8〜63位ASCII字符或64位十六进制字符！";
+ERROR4 = "网络密钥不是十六进制（0〜9，a〜f，A〜F）格式！";
+ERROR5 = "ASCII密钥的长度必须为5或13！";
+ERROR6 = "网络密钥的长度不正确！";
+ERROR7 = "网络密钥的长度必须为10或26！";
+ERROR8 = "网络密钥和确认密钥不相同！";
+ERROR9 = "网络密钥不是ASCII格式！";
+ERROR10 = "网络密钥不是64HEX（0〜9，a〜f，A〜F）格式！";
+ERROR11 = "此ChannelPlan无法通过频道12,13或Band2，Band3加入AdHoc !!";
+ERROR12 = "无法通过WPA-NONE !!加入Adhoc！";
+ERROR13 = "无法通过WPA2-PSK加入Adhoc ！！";
+ERROR14 = "不支持WPA / WPA2 Enterprise !!";
+ERROR15 = "请允许实用程序访问钥匙串。";
+ERROR16 = "不支持WPA3!!";
+
+WARNING0 = "警告";
+WARNING1 = "请输入SSID";
+WARNING2 = "请输入配置文件名称";
+WARNING3 = "SSID字符的长度大于32。";
+WARNING4 = "配置文件已存在，您要覆盖它吗？";
+WARNING5 = "您确定要删除所选的配置文件吗？";
+
+NOTICE0 = "注意";
+NOTICE1 = "AP模式错误。";
+NOTICE2 = "STA模式错误。";
+NOTICE3 = "QOSMode设置值失败";
+NOTICE4 = "QOSMode获取值失败";
+NOTICE5 = "QOSMode错误值";
+NOTICE6 = "RTSThreshold超出范围。（0〜2432）";
+NOTICE7 = "FragmentationThreshold超出范围。（256〜2432）";
+NOTICE8 = "请在“系统偏好设置”的“网络”项中启用USB-WiFi卡。";
+NOTICE9 = "将您的USB-WiFi适配器连接到计算机";
+NOTICE10 = "密码错误，请重试";
+NOTICE11 = "您确定要卸载吗？";
+NOTICE12 = "系统扩展已阻止";
+NOTICE13 = "开发者'Realtek Semiconductor Corp'的系统软件被阻止加载。";
