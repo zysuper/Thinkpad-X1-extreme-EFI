@@ -36,8 +36,6 @@ The maintenance of clover version EFI is discontinued, and the future will focus
 
 ## Opencore efi version considerations
 
-Opencore efi is still in the development and testing stage.
-
 You need to generate SMBIOS yourself([GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)),reference for specific steps: [coffee-lake-8th-gen](https://khronokernel.github.io/Opencore-Vanilla-Laptop-Guide/config.plist/coffee-lake-8th-gen.html#Platforminfo)
 
 ## Use intel original card Bluetooth
