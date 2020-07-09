@@ -2,6 +2,16 @@
 
 The maintenance of clover version EFI is discontinued, and the future will focus on OpenCore EFI.
 
+Intel WiFi Card can work normally!!!
+
+Intel WiFi Card can work normally!!!
+
+Intel WiFi Card can work normally!!!
+
+[Go and see `itlwm`](https://github.com/OpenIntelWireless/itlwm)
+
+[WiFi driver front-end application `HeliPort`](https://github.com/OpenIntelWireless/HeliPort)
+
 ## [Goto Chinese Readme](./readme-zh.md)
 
 ## update log
@@ -15,7 +25,6 @@ The maintenance of clover version EFI is discontinued, and the future will focus
 
 ## OpenCore unsolved or unprocessed part
 
-- Intel WIFI driver
 - HDMI video output
 - Touch screen driver (When I have free time)
 

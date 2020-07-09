@@ -2,6 +2,18 @@
 
 clover 版本 EFI 停止维护，未来主营 OpenCore EFI。
 
+英特尔WiFi卡可以正常工作！！！
+
+英特尔WiFi卡可以正常工作！！！
+
+英特尔WiFi卡可以正常工作！！！
+
+[去看看`itlwm`]（https://github.com/OpenIntelWireless/itlwm）
+
+[WiFi驱动程序前端应用程序“ HeliPort”]（https://github.com/OpenIntelWireless/HeliPort）
+
+非常感谢硬件WiFi卡驱动程序开发人员@zxystd！
+
 ## 更新日志
 
 - [20-7-7] OpenCore EFI 已经完成.
@@ -13,7 +25,6 @@ clover 版本 EFI 停止维护，未来主营 OpenCore EFI。
 
 ## OpenCore 没有解决或者还没处理的部分
 
-- Intel WIFI 的驱动
 - HDMI 视频输出
 - 触控屏驱动 (等我有空)
 
