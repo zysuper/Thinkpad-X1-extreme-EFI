@@ -506,10 +506,10 @@
 	<dict>
 		<key>Add</key>
 		<dict>
-			<key>PciRoot(0x0)/Pci(0x1b,0x0)</key>
+			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
 			<dict>
 				<key>layout-id</key>
-				<data>CwAAAA==</data>
+				<data>HwAAAA==</data>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
@@ -1173,7 +1173,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>keepsyms=1 debug=0x100 alcid=11 -wegnoegpu -cdfon -igfxmlr igfxpavp=1 igfxfw=2 uia_exclude=HS05,HS06,USR1,USR2</string>
+				<string>keepsyms=1 debug=0x100 -wegnoegpu -cdfon -igfxmlr igfxpavp=1 igfxfw=2 uia_exclude=HS05,HS06,USR1,USR2</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>prev-lang:kbd</key>
