@@ -12,6 +12,8 @@ Intel WiFi Card can work normally!!!
 
 [WiFi driver front-end application `HeliPort`](https://github.com/OpenIntelWireless/HeliPort)
 
+Many thanks to hardware WiFi card driver developer @zxystd!
+
 ## [Goto Chinese Readme](./readme-zh.md)
 
 ## update log
