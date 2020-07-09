@@ -1173,7 +1173,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>keepsyms=1 debug=0x100 -wegnoegpu -cdfon -igfxmlr igfxpavp=1 igfxfw=2 uia_exclude=HS05,HS06,USR1,USR2</string>
+				<string>keepsyms=1 debug=0x100 -wegnoegpu -cdfon -igfxmlr igfxfw=2 uia_exclude=HS05,HS06,USR1,USR2</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>prev-lang:kbd</key>
