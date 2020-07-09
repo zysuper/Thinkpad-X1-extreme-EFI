@@ -14,6 +14,10 @@ clover 版本 EFI 停止维护，未来主营 OpenCore EFI。
 
 非常感谢硬件WiFi卡驱动程序开发人员@zxystd！
 
+Look at below:
+
+![](./screenshot/HeliPort.png)
+
 ## 更新日志
 
 - [20-7-7] OpenCore EFI 已经完成.
