@@ -36,7 +36,7 @@ Look at below:
 ## ACPI文件描述
 
 - SSDT-Battery.aml 电池电量信息修补程序。
-- 键盘上的SSDT-keyboard.aml 屏幕亮度调整按钮修复。
+- SSDT-keyboard.aml 键盘上的屏幕亮度调整按钮修复。
 - SSDT_NVMe-Pcc.aml 用于屏蔽主硬盘驱动器位置上的PM981。 **如果您的PM981不是主硬盘驱动器，请不要使用它**。
 - SSDT-dGPUT-Off.aml 阻止独立显卡加载并节省电量。
 - SSDT-GPRW.aml & SSDT-PTSWAK.aml 休眠问题修复。
@@ -45,8 +45,8 @@ Look at below:
 - SSDT-PLUG.aml Cpu 电源管理使用 xcpm + hwp。
 - SSDT-HPET.aml 使用 SSDTTime 修复(来自 Clover 的) IRQ 冲突，例如 FixIPIC，FixTMR，FixRTC，FixHPET 等。此补丁需要 config.plist ACPI 重命名配合。
 - SSDT-SBUS-mchc.aml 修复了 macOS 中的 AppleSMBus 支持。
-- SSDT-PMC.aml 所有 “真正的” 300系列主板（不包括Z370）都需要此 SSDT，它专门带回了 NVRAM 支持，并且对最终用户的配置很少。第10代主板不需要这些平台上的NVRAM原生的SSDT。 **!!可能该补丁不需要**
-- SSDT-RHUB.aml 因此，在400系列主板上，某些OEM破坏了ACPI规范，这导致启动进入macOS时出现问题。为了解决这个问题，我们要关闭RHUB设备并强制macOS手动重建端口。 **!!可能不需要**
+- SSDT-PMC.aml 所有 “真正的” 300 系列主板（不包括 Z370）都需要此 SSDT，它专门带回了 NVRAM 支持，并且对最终用户的配置很少。第10代主板不需要这些平台上的 NVRAM 原生的 SSDT。 **!!可能该补丁不需要**
+- SSDT-RHUB.aml 因此，在 400 系列主板上，某些 OEM 破坏了ACPI规范，这导致启动进入 macOS 时出现问题。为了解决这个问题，我们要关闭 RHUB 设备并强制 macOS 手动重建端口。 **!!可能不需要**
 
 ## 使用 intel 原装卡蓝牙
 
