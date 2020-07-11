@@ -34,6 +34,19 @@
 
 - You may need to install the daemon process under ALCPlugFix/alc_fix (my modified version for X1E series) to solve the problem of popping the headphone jack.
 
+## Use intel original card Bluetooth
+
+By default, the USB port of the Bluetooth original card is blocked. If you need to use the original Intel network card, modify config.plist yourself to remove the shield of `HS14`.
+
+```xml
+<dict>
+   <key>Arguments</key>
+   <!-- Remove the shield of HS14 -->
+   <string>-lilubetaall -cdfon uia_exclude=HS05,HS06,USR1,USR2</string>
+         ...
+</dict>
+```
+
 ## review
 
 ![system infomation](https://github.com/zysuper/Thinkpad-X1-extreme-EFI/raw/master/screenshot/WX20181112-135012%402x.png)

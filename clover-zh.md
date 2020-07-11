@@ -34,6 +34,18 @@
 
 - 你可能需要安装 ALCPlugFix/alc_fix 下的守候进程（我修改过的版本，适用于 X1E 系列），解决耳机插孔切换有爆音的问题。
 
+## 使用 intel 原装卡蓝牙
+
+默认屏蔽了 intel 原装卡蓝牙的 usb 口。 如果你需要使用 intel 原装网卡，自己修改 config.plist, 去掉对 `HS14` 的屏蔽。
+
+```xml
+<dict>
+  <key>Arguments</key>
+  <!-- 去掉 HS14 的屏蔽 -->
+  <string>-lilubetaall -cdfon uia_exclude=HS05,HS06,USR1,USR2</string>
+        ...
+</dict>
+```
 
 ## 效果预览
 

@@ -14,6 +14,8 @@ Look at below:
 
 ![](./screenshot/HeliPort.png)
 
+[下载 EFI v1.0.0](./Release/Thinkpad-X1E-GEN1-OpenCore-v1.0.0.7z)
+
 ## 更新日志
 
 - [20-7-7] OpenCore EFI 已经完成.
@@ -67,11 +69,10 @@ Look at below:
 
 ```xml
 <dict>
-  <key>Arguments</key>
-  <!-- 去掉 HS14 的屏蔽 -->
-  <string>-lilubetaall -cdfon uia_exclude=HS14,HS05,HS06,USR1,USR2</string>
-        ...
-</dict>
+	<key>boot-args</key>
+	<string>keepsyms=1 debug=0x100 -wegnoegpu -cdfon -igfxmlr igfxfw=2 uia_exclude=HS05,HS06,USR1,USR2
+      </string>
+</dict
 ```
 
 ## HDMI

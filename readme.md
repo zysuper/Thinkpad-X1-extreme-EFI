@@ -14,6 +14,8 @@ Look at below:
 
 ![](./screenshot/HeliPort.png)
 
+[Download EFI v1.0.0](./Release/Thinkpad-X1E-GEN1-OpenCore-v1.0.0.7z)
+
 ## [Goto 中文说明](./readme-zh.md)
 
 ## update log
@@ -69,10 +71,9 @@ By default, the USB port of the Bluetooth original card is blocked. If you need 
 
 ```xml
 <dict>
-   <key>Arguments</key>
-   <!-- Remove the shield of HS14 -->
-   <string>-lilubetaall -cdfon uia_exclude=HS14,HS05,HS06,USR1,USR2</string>
-         ...
+	<key>boot-args</key>
+	<string>keepsyms=1 debug=0x100 -wegnoegpu -cdfon -igfxmlr igfxfw=2 uia_exclude=HS05,HS06,USR1,USR2
+      </string>
 </dict>
 ```
 
