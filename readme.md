@@ -8,7 +8,7 @@ Intel WiFi Card can work normally!!!
 
 [WiFi driver front-end application `HeliPort`](https://github.com/OpenIntelWireless/HeliPort)
 
-Many thanks to hardware WiFi card driver developer @zxystd!
+Many thanks to hardware WiFi card driver developer [@zxystd](https://github.com/zxystd)!
 
 Look at below:
 
@@ -25,10 +25,23 @@ Look at below:
 - [20-6-23] intel bluetooth supported.
 - [19-5-29] add noTouchId.kext. MacOS is expecting Touch ID to be available, causing lag on password prompts, this kext can fix this.
 
-## OpenCore unsolved or unprocessed part
+## OpenCore EFI Supported
 
-- HDMI video output
-- Touch screen driver (When I have free time)
+- Touchpad & touch screen multi touch.
+- Red dot PS2 control.
+- Cpu power management use xcpm & hwp.
+- Screen brightness adjustment and keyboard button control.
+- Battery level information.
+- AppleALC for sound card.
+- card reader support.
+- Machine sleep and wakeup.
+- Intel bluetooth supported. (Thanks for @zxystd!)
+- intel cable Gigabit LAN. (mini RJ45)
+- intel integrated graphics.
+
+## OpenCore EFI not Supported
+
+- HDMI video output (more info see below `HDMI`)
 
 ## Opencore efi version considerations
 

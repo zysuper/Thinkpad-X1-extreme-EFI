@@ -6,9 +6,9 @@ clover 版本 EFI 停止维护，未来主营 OpenCore EFI。
 
 [去看看`itlwm`](https://github.com/OpenIntelWireless/itlwm)
 
-[WiFi驱动程序前端应用程序“ HeliPort”](https://github.com/OpenIntelWireless/HeliPort)
+[WiFi驱动程序前端应用程序 `HeliPort`](https://github.com/OpenIntelWireless/HeliPort)
 
-非常感谢硬件WiFi卡驱动程序开发人员@zxystd！
+非常感谢硬件WiFi卡驱动程序开发人员 [@zxystd](https://github.com/zxystd)！
 
 Look at below:
 
@@ -23,10 +23,23 @@ Look at below:
 - [20-6-23] 支持 intel 原生蓝牙.
 - [19-5-29] 增加 noTouchId.kext. 解决输入密码时，macos 认为指纹模块存在导致的卡顿.
 
-## OpenCore 没有解决或者还没处理的部分
+## OpenCore EFI 支持部分
 
-- HDMI 视频输出
-- 触控屏驱动 (等我有空)
+- 触摸板和触摸屏多点触控。
+- 小红点 PS2 鼠标。
+- CPU电源管理使用 xcpm和 hwp。
+- 屏幕亮度调整和键盘按钮控制。
+- 电池电量信息。
+- 声卡的AppleALC。
+- 读卡器支持。
+- 机器睡眠和唤醒。
+- 支持英特尔蓝牙。 （感谢@zxystd！）
+- 英特尔电缆千兆局域网。 （迷你RJ45）
+- 英特尔集成显卡。
+
+## OpenCore EFI 不支持部分
+
+- HDMI视频输出（更多信息，请参见其下： `HDMI`)
 
 ## OpenCore 使用注意事项
 
