@@ -14,7 +14,7 @@ Look at below:
 
 ![](./screenshot/HeliPort.png)
 
-[Download EFI v1.0.0](./Release/Thinkpad-X1E-GEN1-OpenCore-v1.0.0.7z)
+[Download EFI v1.0.0](https://github.com/zysuper/Thinkpad-X1-extreme-EFI/raw/master/Release/Thinkpad-X1E-GEN1-OpenCore-v1.0.0.7z)
 
 ## [Goto 中文说明](./readme-zh.md)
 
