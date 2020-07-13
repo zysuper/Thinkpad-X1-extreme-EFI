@@ -2,7 +2,38 @@
 
 - If you are a fresh install, you need to generate SMBIOS yourself([GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)),reference for specific steps: [coffee-lake-8th-gen](https://khronokernel.github.io/Opencore-Vanilla-Laptop-Guide/config.plist/coffee-lake-8th-gen.html#Platforminfo).
 - If you are upgraded, see [this](https://github.com/zysuper/Thinkpad-X1-extreme-EFI/issues/28).
-- If you are using an Apple native network card, modify the boot-args of config.plist to add a shield for built-in Bluetooth `HS14`.
+- Copy EFI/BOOT/* to your boot partition EFI/BOOT.
+- Copy EFI/OC to your boot partition EFI/OC.
+- Reboot your computer.
+
+## 1.0.1 version
+
+If you are using an Apple native network card, modify the boot-args of config.plist to add a shield for built-in 
+Bluetooth `HS14`.
+
+change USBPorts.kext/info.plist remove HS14 below:
+
+```xml
+					<key>HS14</key>
+					<dict>
+						<key>UsbConnector</key>
+						<integer>255</integer>
+						<key>name</key>
+						<string>HS14</string>
+						<key>port</key>
+						<data>
+						DgAAAA==
+						</data>
+					</dict>
+```
+
+## 1.0.0 version
+
+If you are using an Apple native network card, modify the boot-args of config.plist to add a shield for built-in 
+Bluetooth `HS14`.
+
+change config.plist:
+
 ```xml
 <dict>
 	<key>boot-args</key>
@@ -10,6 +41,3 @@
       </string>
 </dict>
 ```
-- Copy EFI/BOOT/* to your boot partition EFI/BOOT.
-- Copy EFI/OC to your boot partition EFI/OC.
-- Reboot your computer.
