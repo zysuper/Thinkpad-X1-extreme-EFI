@@ -6,6 +6,15 @@
 - Copy EFI/OC to your boot partition EFI/OC.
 - Reboot your computer.
 
+## 1.0.2 version
+
+If you not want openCore always on the top of UEFI boot list, change config.plist, set BootProtect to `None`
+
+```xml
+<key>BootProtect</key>
+<string>None</string>
+```
+
 ## 1.0.1 version
 
 If you are using an Apple native network card, modify the boot-args of config.plist to add a shield for built-in 
