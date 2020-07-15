@@ -14,7 +14,6 @@ Look at below:
 
 ![](./screenshot/HeliPort.png)
 
-[下载 EFI v1.0.0](https://github.com/zysuper/Thinkpad-X1-extreme-EFI/raw/master/Release/Thinkpad-X1E-GEN1-OpenCore-v1.0.0.7z)
 
 ## 更新日志
 
