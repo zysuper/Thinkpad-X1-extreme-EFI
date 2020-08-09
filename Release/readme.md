@@ -6,6 +6,17 @@
 - Copy EFI/OC to your boot partition EFI/OC.
 - Reboot your computer.
 
+## Random no sound card after system boot
+
+Add delay for alc driver loaded.
+
+```xml
+			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
+			<dict>
+				<key>alc-delay</key>
+				<integer>500</integer>
+```
+
 ## 1.0.2 version
 
 If you not want openCore always on the top of UEFI boot list, change config.plist, set BootProtect to `None`
