@@ -14,11 +14,11 @@ Look at below:
 
 ![](./screenshot/HeliPort.png)
 
-
 ## [Goto 中文说明](./readme-zh.md)
 
 ## update log
 
+- [20-9-28] Enable ThunderBolt 3 Hotplug. (test version)
 - [20-7-7] OpenCore EFI is done!
 - [20-7-5] add opencore efi. (beta version!!)
 - [20-7-5] use virualsmc replace fakesmc.
@@ -50,19 +50,18 @@ You need to generate SMBIOS yourself([GenSMBIOS](https://github.com/corpnewt/Gen
 
 ## ACPI file description
 
-- SSDT-Battery.aml  Battery level information hotfix.
+- SSDT-Battery.aml Battery level information hotfix.
 - SSDT-keyboard.aml Screen brightness adjustment button repair on keyboard.
 - SSDT_NVMe-Pcc.aml This is used to shield the PM981 on the main hard drive location. **If your PM981 is not the primary hard drive location, please do not use it**.
 - SSDT-dGPUT-Off.aml Blocks discrete graphics and saves power.
 - SSDT-GPRW.aml & SSDT-PTSWAK.aml Hibernation issue fix.
 - SSDT-USBX.aml USB power injection.
-- SSDT-PNLF-CFL.aml Screen brightness adjustment fix hot patch. 
+- SSDT-PNLF-CFL.aml Screen brightness adjustment fix hot patch.
 - SSDT-PLUG.aml Cpu power management use xcpm+hwp.
 - SSDT-HPET.aml Use SSDTTime to fix IRQ Conflicts from Clover like FixIPIC, FixTMR, FixRTC, FixHPET, etc. This patch requires the config.plist ACPI rename patch to cooperate.
-- SSDT-SBUS-mchc.aml Fixing AppleSMBus support in macOS. 
-- SSDT-PMC.aml This SSDT is required for all "true" 300 series motherboards(Z370 is excluded), it specifically brings back NVRAM support and requires very little configuration for the end user. 10th gen motherboards do not need this SSDT, NVRAM's native on these platforms.  **!! Maybe not needed**
+- SSDT-SBUS-mchc.aml Fixing AppleSMBus support in macOS.
+- SSDT-PMC.aml This SSDT is required for all "true" 300 series motherboards(Z370 is excluded), it specifically brings back NVRAM support and requires very little configuration for the end user. 10th gen motherboards do not need this SSDT, NVRAM's native on these platforms. **!! Maybe not needed**
 - SSDT-RHUB.aml So on 400 series motherboards, certain OEMs have broken the ACPI spec and this results in issues when booting into macOS. To fix this, we'll want to turn off the RHUB device and force macOS to manually rebuild the ports. **!! Maybe not needed**
-
 
 ## Use intel original card Bluetooth
 
@@ -87,5 +86,3 @@ By default, the USB port of the Bluetooth original card is blocked. If you need 
 ## Old Clover EFI
 
 [clover readme](./clover.md)
-
-

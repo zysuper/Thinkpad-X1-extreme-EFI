@@ -2,21 +2,21 @@
 
 clover 版本 EFI 停止维护，未来主营 OpenCore EFI。
 
-英特尔WiFi卡可以正常工作！！！
+英特尔 WiFi 卡可以正常工作！！！
 
 [去看看`itlwm`](https://github.com/OpenIntelWireless/itlwm)
 
-[WiFi驱动程序前端应用程序 `HeliPort`](https://github.com/OpenIntelWireless/HeliPort)
+[WiFi 驱动程序前端应用程序 `HeliPort`](https://github.com/OpenIntelWireless/HeliPort)
 
-非常感谢硬件WiFi卡驱动程序开发人员 [@zxystd](https://github.com/zxystd)！
+非常感谢硬件 WiFi 卡驱动程序开发人员 [@zxystd](https://github.com/zxystd)！
 
 Look at below:
 
 ![](./screenshot/HeliPort.png)
 
-
 ## 更新日志
 
+- [20-9-28] ThunderBolt 3 热插拔支持. (测试版本)
 - [20-7-7] OpenCore EFI 已经完成.
 - [20-7-5] 提供与时俱进的 OpenCore EFI 测试版.
 - [20-7-5] 使用 virualsmc 替换了 fakesmc.
@@ -28,30 +28,30 @@ Look at below:
 
 - 触摸板和触摸屏多点触控。
 - 小红点 PS2 鼠标。
-- CPU电源管理使用 xcpm和 hwp。
+- CPU 电源管理使用 xcpm 和 hwp。
 - 屏幕亮度调整和键盘按钮控制。
 - 电池电量信息。
-- 声卡的AppleALC。
+- 声卡的 AppleALC。
 - 读卡器支持。
 - 机器睡眠和唤醒。
 - 支持英特尔蓝牙。 （感谢@zxystd！）
-- 英特尔电缆千兆局域网。 （迷你RJ45）
+- 英特尔电缆千兆局域网。 （迷你 RJ45）
 - 英特尔集成显卡。
 
 ## OpenCore EFI 不支持部分
 
-- HDMI视频输出（更多信息，请参见其下： `HDMI`)
+- HDMI 视频输出（更多信息，请参见其下： `HDMI`)
 
 ## OpenCore 使用注意事项
 
 你需要自己生成 SMBIOS ([GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)),
 你可以参考指南：[coffee-lake-8th-gen](https://khronokernel.github.io/Opencore-Vanilla-Laptop-Guide/config.plist/coffee-lake-8th-gen.html#Platforminfo)
 
-## ACPI文件描述
+## ACPI 文件描述
 
 - SSDT-Battery.aml 电池电量信息修补程序。
 - SSDT-keyboard.aml 键盘上的屏幕亮度调整按钮修复。
-- SSDT_NVMe-Pcc.aml 用于屏蔽主硬盘驱动器位置上的PM981。 **如果您的PM981不是主硬盘驱动器，请不要使用它**。
+- SSDT_NVMe-Pcc.aml 用于屏蔽主硬盘驱动器位置上的 PM981。 **如果您的 PM981 不是主硬盘驱动器，请不要使用它**。
 - SSDT-dGPUT-Off.aml 阻止独立显卡加载并节省电量。
 - SSDT-GPRW.aml & SSDT-PTSWAK.aml 休眠问题修复。
 - SSDT-USBX.aml USB 电源注入。
@@ -59,8 +59,8 @@ Look at below:
 - SSDT-PLUG.aml Cpu 电源管理使用 xcpm + hwp。
 - SSDT-HPET.aml 使用 SSDTTime 修复(来自 Clover 的) IRQ 冲突，例如 FixIPIC，FixTMR，FixRTC，FixHPET 等。此补丁需要 config.plist ACPI 重命名配合。
 - SSDT-SBUS-mchc.aml 修复了 macOS 中的 AppleSMBus 支持。
-- SSDT-PMC.aml 所有 “真正的” 300 系列主板（不包括 Z370）都需要此 SSDT，它专门带回了 NVRAM 支持，并且对最终用户的配置很少。第10代主板不需要这些平台上的 NVRAM 原生的 SSDT。 **!!可能该补丁不需要**
-- SSDT-RHUB.aml 因此，在 400 系列主板上，某些 OEM 破坏了ACPI规范，这导致启动进入 macOS 时出现问题。为了解决这个问题，我们要关闭 RHUB 设备并强制 macOS 手动重建端口。 **!!可能不需要**
+- SSDT-PMC.aml 所有 “真正的” 300 系列主板（不包括 Z370）都需要此 SSDT，它专门带回了 NVRAM 支持，并且对最终用户的配置很少。第 10 代主板不需要这些平台上的 NVRAM 原生的 SSDT。 **!!可能该补丁不需要**
+- SSDT-RHUB.aml 因此，在 400 系列主板上，某些 OEM 破坏了 ACPI 规范，这导致启动进入 macOS 时出现问题。为了解决这个问题，我们要关闭 RHUB 设备并强制 macOS 手动重建端口。 **!!可能不需要**
 
 ## 使用 intel 原装卡蓝牙
 
@@ -85,4 +85,3 @@ Look at below:
 ## 旧式 Clover EFI
 
 [clover 说明](./clover-zh.md)
-
