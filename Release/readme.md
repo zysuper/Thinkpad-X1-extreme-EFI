@@ -28,10 +28,7 @@ If you not want openCore always on the top of UEFI boot list, change config.plis
 
 ## use apple native Bluetooth
 
-1. If you are using an Apple native network card, modify the boot-args of config.plist to add a shield for built-in
-   Bluetooth `HS14`.
-
-change USBPorts.kext/info.plist remove HS14 below:
+1. If you are using an Apple native network card, change USBPorts.kext/info.plist remove HS14 below:
 
 ```xml
 					<key>HS14</key>
